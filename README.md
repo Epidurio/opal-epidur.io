@@ -1,19 +1,9 @@
 # opal-epidur.io
-Port of epidur.io code using the [Opal](https://github.com/openhealthcare/opal) healthcare application framework
-
-###
-
-To get started, run the following commands:
-
-```
-    python manage.py migrate
-    python manage.py runserver
-```
+Port of epidur.io using the [Opal](https://github.com/openhealthcare/opal) healthcare application framework
 
 ### Developing Epidur.io
 (with notes for the errant Rubyist and indication of what is Python, what is Django, and what is Opal)
 
-```
 * clone the sources locally
 `git clone https://github.com/Epidurio/opal-epidur.io epidurio/`
 
@@ -43,9 +33,7 @@ To get started, run the following commands:
 
 * navigate to the application in a browser
 
-* check out Admin interface at /admin
-
-
+* check out aplication at http://127.0.0.1:8000/
 
 
 ### Deploying your new Opal application to Heroku for testing/demo
