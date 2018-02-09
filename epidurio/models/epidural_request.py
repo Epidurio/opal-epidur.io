@@ -1,31 +1,6 @@
-"""
-epidurio models.
-"""
 from django.db.models import fields
 from django.utils import timezone
 from opal import models
-
-"""
-Core Opal models - these inherit from the abstract data models in
-opal.models but can be customised here with extra / altered fields.
-"""
-class Demographics(models.Demographics): pass
-class Location(models.Location): pass
-class Allergies(models.Allergies): pass
-class Diagnosis(models.Diagnosis): pass
-class PastMedicalHistory(models.PastMedicalHistory): pass
-class Treatment(models.Treatment): pass
-class Investigation(models.Investigation): pass
-class SymptomComplex(models.SymptomComplex): pass
-class PatientConsultation(models.PatientConsultation): pass
-
-# we commonly need a referral route, ie how the patient
-# came to the service, but not always.
-# class ReferralRoute(models.ReferralRoute): pass
-
-"""
-End Opal core models
-"""
 
 
 class EpiduralRequest(models.EpisodeSubrecord):
@@ -33,7 +8,7 @@ class EpiduralRequest(models.EpisodeSubrecord):
     # this may change if we decide to handle the State of EpiduralRequest differently
     # in the Ruby version this was an Enum
     # Could this be handled as a SNOMED-CT lookuplist?
-    epidural_status = fields.IntegerField(
+    epidural_status = fields.PositiveIntegerField(
         null=True,
         help_text="Internal field for managing the state of the epidural request - ordered, in progress, completed, attempted-failed, etc)",
     )
@@ -69,8 +44,8 @@ class EpiduralRequest(models.EpisodeSubrecord):
 
     request_date_time = fields.DateTimeField(
         null=True,
-        default=timezone.now,
+        # default=timezone.now, (causes an Opal APIerror if uncommented)
         help_text="Date and time of the epidural request",)
 
-    # NOTE: FK patient_id is handled because of EpisodeSubrecord inheritance
-    # NOTE: FK user_id is handled because of TrackedModel inheritance
+    # NOTE: patient_id is handled because of EpisodeSubrecord inheritance
+    # NOTE: created_at, updated_at and user_id are handled because of TrackedModel inheritance
