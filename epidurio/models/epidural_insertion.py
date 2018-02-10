@@ -1,6 +1,10 @@
 from django.db.models import fields
 from django.utils import timezone
 from opal import models
+from opal.core import lookuplists
+from opal.core.fields import ForeignKeyOrFreeText
+
+class ProcedureType(lookuplists.LookupList): pass
 
 
 class EpiduralInsertion(models.EpisodeSubrecord):
@@ -12,7 +16,7 @@ class EpiduralInsertion(models.EpisodeSubrecord):
     )
 
     # TODO should ideally allow SNOMED codes to be embedded in the text
-    insertion_record = fields.TextField(
+    insertion_record = ForeignKeyOrFreeText(ProcedureType)(
         null=True,
         max_length=255,
         help_text="Free text clinical record of the intervention",
