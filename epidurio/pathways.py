@@ -1,5 +1,6 @@
 from opal.core import pathway
 from epidurio import models
+from epidurio import patient_lists
 
 
 class RequestEpiduralPathway(pathway.PagePathway):
@@ -7,5 +8,14 @@ class RequestEpiduralPathway(pathway.PagePathway):
     slug = "request_epidural"
 
     steps = (
-        pathway.Step(model=models.EpiduralRequest),
+        models.EpiduralRequest,
     )
+
+    def save(self, data, user=None, episode=None, patient=None):
+        super(RequestEpiduralPathway, self).save(
+            data, user=user, episode=episode, patient=patient
+        )
+        episode.set_tag_names(
+            [patient_lists.EpiduralRequestsList.tag], user
+        )
+        return patient, episode

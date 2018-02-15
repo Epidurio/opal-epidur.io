@@ -49,3 +49,8 @@ Port of epidur.io using the [Opal](https://github.com/openhealthcare/opal) healt
 ### Deploying your new Opal application to Heroku for testing/demo
 
 http://opal.openhealthcare.org.uk/docs/guides/deployment/
+
+
+### Running Epidur.io in dev
+if you run python manage.py create_dev_labour_ward, you will get a list of
+prepopulated patients in the labour ward.

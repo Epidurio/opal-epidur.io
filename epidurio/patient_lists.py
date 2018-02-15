@@ -6,26 +6,24 @@ from opal.models import Episode
 from epidurio import models
 
 
-class AllPatientsList(core.patient_lists.PatientList):
-    display_name = 'All Patients'
+class LabourWardList(core.patient_lists.TaggedPatientList):
+    display_name = "Labour Ward"
+    tag = "labour"
+    template_name = "patient_lists/layouts/labour_ward.html"
 
     schema = [
-        models.Demographics,
-        models.Diagnosis,
-        models.Treatment
+        models.Allergies,
+        models.EpiduralRequest,
     ]
-
-    def get_queryset(self, **kwargs):
-        return Episode.objects.all()
 
 
 class EpiduralRequestsList(core.patient_lists.TaggedPatientList):
     display_name = "Epidural Requests"
     tag = "epidural_requested"
+    template_name = "patient_lists/layouts/card_list.html"
 
     schema = [
         models.Allergies,
-        models.Demographics,
         models.EpiduralRequest,
     ]
 
@@ -33,11 +31,11 @@ class EpiduralRequestsList(core.patient_lists.TaggedPatientList):
 class EpiduralFollowUpsList(core.patient_lists.TaggedPatientList):
     display_name = "Epidural Followups"
     tag = "epidural_completed"
+    template_name = "patient_lists/layouts/card_list.html"
     direct_add = False
     # patients cannot be direct added; they must have had an epidural to be added
 
     schema = [
-        models.Demographics,
         models.EpiduralRequest,
         models.EpiduralInsertion,
     ]

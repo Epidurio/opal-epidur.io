@@ -40,11 +40,22 @@ class EpiduralInsertion(models.EpisodeSubrecord):
 
     # TODO should ideally be SNOMEDized
     # TODO any other options @TimCKnowles?
-    OUTCOME_CHOICES=(
-        ("SUCCESS", "Successful epidural insertion and effective analgesia"),
-        ("INEFFECTIVE", "Successful insertion of epidural catheter"),
-        ("DURAL PUNCTURE", "Epidural insertion caused dural puncture"),
-        ("FAILURE", "Failed epidural insertion"),
+    OUTCOME_CHOICES = (
+        (
+            "Successful epidural insertion and effective analgesia",
+            "Successful epidural insertion and effective analgesia"
+        ),
+        (
+            "Successful insertion of epidural catheter",
+            "Successful insertion of epidural catheter"
+        ),
+        (
+            "Epidural insertion caused dural puncture",
+            "Epidural insertion caused dural puncture"
+        ),
+        (
+            "Failed epidural insertion", "Failed epidural insertion"
+        ),
     )
     outcome = fields.CharField(
         choices = OUTCOME_CHOICES,

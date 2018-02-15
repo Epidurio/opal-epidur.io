@@ -20,19 +20,23 @@ class EpiduralRequest(models.EpisodeSubrecord):
 
     cannula_in_situ = fields.BooleanField(
         help_text="Does the patient have a peripheral venous cannula in situ?",
+        default=False
     )
 
     anticoagulants = fields.BooleanField(
         help_text="Is the patient currently taking anticolagulants, antiplatelet agents, or any other medication that 'thins' blood or affects coagulation?",
+        default=False
     )
 
     pyrexia = fields.BooleanField(
         help_text="Does the patient have a recent history of pyrexia?",
+        default=False
         # TODO definition of pyrexia should be explicitly stated (temp, duration, what is 'recent' etc)
     )
 
     hypertension = fields.BooleanField(
         help_text="Does the patient have pregnancy-induced hypertension (PIH)?",
+        default=False
     )
 
     # TODO this field could be autopopulated from the lab, also needs a timestamp to give meaning to 'latest'

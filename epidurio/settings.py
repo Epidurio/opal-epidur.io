@@ -167,6 +167,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admin',
     'axes',
     'reversion',
     'rest_framework',
@@ -177,7 +178,7 @@ INSTALLED_APPS = (
     'opal.core.pathway',
     'opal.core.referencedata',
     'epidurio',
-    'django.contrib.admin',
+    'intrahospital_api',
 )
 
 # A sample logging configuration. The only tangible logging
