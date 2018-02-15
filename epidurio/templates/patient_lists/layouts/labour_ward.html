@@ -1,16 +1,47 @@
-{% extends 'patient_lists/layouts/card_list_base.html' %}
 {% load forms %}
+{% load labourward %}
+<div class="container content-offset">
+  <div class="panel panel-primary panel-container">
+    <div class="panel-heading patient-list-header">
+      <h2>
+        {% block list_header %}
+          {{ patient_list.display_name }}
+        {% endblock %}
 
-{% block card_body %}
-{% endblock card_body %}
-{% block card_footer %}
-  <div class="panel-footer">
-    <div class="row">
-      <div class="col-md-12">
-        <a class="btn btn-primary" pathway-episode="row" open-pathway="request_epidural" pathway-callback="removeFromList(row.id)">
+        <a class="btn btn-secondary pull-right" pathway-episode="row" open-pathway="request_epidural" pathway-callback="removeFromList(row.id)">
           {% icon 'fa-sign-out' %} Request Epidural
         </a>
-      </div>
+
+      </h2>
+    </div>
+  </div> <!-- panel-primary -->
+  <div class="panel-body">
+    <div class="row">
+      {% ward_card "1" %}
+      {% ward_card "2" %}
+      {% ward_card "3" %}
+      {% ward_card "4" %}
+    </div>
+    <div class="row">
+      {% ward_card "5" %}
+      {% ward_card "6" %}
+      {% ward_card "7" %}
+      {% ward_card "8" %}
+    </div>
+    <div class="row">
+
+      {% ward_card "9" %}
+      {% ward_card "10" %}
+      {% ward_card "11" %}
+      {% ward_card "12" %}
+    </div>
+    <div class="row">
+
+      {% ward_card "Recovery 1" %}
+      {% ward_card "Recovery 2" %}
+      {% ward_card "Recovery 3" %}
+      {% ward_card "Recovery 4" %}
+
     </div>
   </div>
-{% endblock %}
+</div>
