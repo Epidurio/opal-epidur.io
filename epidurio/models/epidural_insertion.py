@@ -4,6 +4,7 @@ from opal import models
 
 
 class EpiduralInsertion(models.EpisodeSubrecord):
+    _is_singleton = True
 
     insertion_date_time = fields.DateTimeField(
         null=True,

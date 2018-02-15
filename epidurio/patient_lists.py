@@ -30,7 +30,7 @@ class EpiduralRequestsList(core.patient_lists.TaggedPatientList):
 class EpiduralFollowupList(core.patient_lists.TaggedPatientList):
     display_name = "Epidural Followups"
     tag = "epidural_completed"
-    template_name = "patient_lists/layouts/card_list.html"
+    template_name = "patient_lists/layouts/follow_up_list.html"
     direct_add = False
     # patients cannot be direct added; they must have had an epidural to be added
 

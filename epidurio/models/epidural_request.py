@@ -4,6 +4,7 @@ from opal import models
 
 
 class EpiduralRequest(models.EpisodeSubrecord):
+    _is_singleton = True
 
     # this may change if we decide to handle the State of EpiduralRequest differently
     # in the Ruby version this was an Enum

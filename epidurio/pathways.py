@@ -37,3 +37,22 @@ class RecordEpiduralPathway(pathway.PagePathway):
             [patient_lists.EpiduralFollowupList.tag], user
         )
         return patient, episode
+
+
+class RecordFollowUPPathway(pathway.PagePathway):
+    display_name = "Record Follow Up"
+    slug = "record_follow_up"
+
+    steps = (
+        models.EpiduralFollowUp,
+        models.SatisfactionRating,
+    )
+
+    def save(self, data, user=None, episode=None, patient=None):
+        super(RecordEpiduralPathway, self).save(
+            data, user=user, episode=episode, patient=patient
+        )
+        episode.set_tag_names(
+            [], user
+        )
+        return patient, episode
