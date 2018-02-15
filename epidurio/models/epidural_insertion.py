@@ -16,7 +16,7 @@ class EpiduralInsertion(models.EpisodeSubrecord):
         help_text="Date and time of the epidural insertion or epidural insertion attempt",
     )
 
-    # TODO should ideally allow SNOMED codes to be embedded in the text
+
     insertion_record = ForeignKeyOrFreeText(
         ProcedureType,
         help_text="Free text clinical record of the intervention"
