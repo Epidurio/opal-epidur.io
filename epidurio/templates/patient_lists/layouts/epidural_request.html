@@ -1,4 +1,14 @@
 {% extends 'patient_lists/layouts/card_list_base.html' %}
+{% load forms %}
+
 {% block card_footer %}
- <a open-pathway="request_epidural" class="btn btn-primary"></a>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col-md-12">
+        <a class="btn btn-primary" pathway-episode="row" open-pathway="record_epidural" pathway-callback="removeFromList(row.id)">
+          {% icon 'fa-sign-out' %} Record Epidural
+        </a>
+      </div>
+    </div>
+  </div>
 {% endblock %}

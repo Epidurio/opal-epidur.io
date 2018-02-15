@@ -2,7 +2,6 @@
 Defining Opal PatientLists
 """
 from opal import core
-from opal.models import Episode
 from epidurio import models
 
 
@@ -20,7 +19,7 @@ class LabourWardList(core.patient_lists.TaggedPatientList):
 class EpiduralRequestsList(core.patient_lists.TaggedPatientList):
     display_name = "Epidural Requests"
     tag = "epidural_requested"
-    template_name = "patient_lists/layouts/card_list.html"
+    template_name = "patient_lists/layouts/epidural_request.html"
 
     schema = [
         models.Allergies,
@@ -28,7 +27,7 @@ class EpiduralRequestsList(core.patient_lists.TaggedPatientList):
     ]
 
 
-class EpiduralFollowUpsList(core.patient_lists.TaggedPatientList):
+class EpiduralFollowupList(core.patient_lists.TaggedPatientList):
     display_name = "Epidural Followups"
     tag = "epidural_completed"
     template_name = "patient_lists/layouts/card_list.html"

@@ -58,7 +58,7 @@ class EpiduralInsertion(models.EpisodeSubrecord):
         ),
     )
     outcome = fields.CharField(
-        choices = OUTCOME_CHOICES,
+        choices=OUTCOME_CHOICES,
         blank=True, null=True,
         help_text="Outcome of the epidural insertion attempt",
         max_length=255,

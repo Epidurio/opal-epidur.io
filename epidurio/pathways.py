@@ -19,3 +19,21 @@ class RequestEpiduralPathway(pathway.PagePathway):
             [patient_lists.EpiduralRequestsList.tag], user
         )
         return patient, episode
+
+
+class RecordEpiduralPathway(pathway.PagePathway):
+    display_name = "Record Epidural"
+    slug = "record_epidural"
+
+    steps = (
+        models.EpiduralInsertion,
+    )
+
+    def save(self, data, user=None, episode=None, patient=None):
+        super(RecordEpiduralPathway, self).save(
+            data, user=user, episode=episode, patient=patient
+        )
+        episode.set_tag_names(
+            [patient_lists.EpiduralFollowupList.tag], user
+        )
+        return patient, episode
