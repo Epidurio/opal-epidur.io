@@ -1,3 +1,4 @@
+{% load forms %}
 <div class="col-md-3">
   <div class="panel" style="min-height: 150px;"> <!-- TODO Don't do this. -->
     <div class="panel-heading">
@@ -5,17 +6,27 @@
     </div>
     <div class="panel-body">
       <div ng-repeat="row in rows">
-        <a href="/#[[row.link]]">
-          <div ng-show="row.location[0].bed == '{{ room_name }}'">
-            <b>
-              [[ row.demographics[0].first_name ]]
-              [[ row.demographics[0].surname ]]
-            </b>
-            <br />
-            DOB:  [[ row.demographics[0].date_of_birth | shortDate ]]
-            <br />
-            MRN [[ row.demographics[0].hospital_number ]]
-          </div>
+        <div ng-show="row.location[0].bed == '{{ room_name }}'">
+          <a href="/#[[row.link]]">
+            <div>
+              <b>
+                [[ row.demographics[0].first_name ]]
+                [[ row.demographics[0].surname ]]
+              </b>
+              <br />
+              DOB:  [[ row.demographics[0].date_of_birth | shortDate ]]
+              <br />
+              MRN [[ row.demographics[0].hospital_number ]]
+            </div> <!--  PID Container -->
+
+            <a class="btn btn-secondary pull-right"
+               pathway-episode="row"
+               open-pathway="request_epidural"
+               pathway-callback="removeFromList(row.id)">
+              {% icon 'fa-sign-out' %} Request Epidural
+            </a>
+
+        </div>
         </a>
       </div> <!-- Row repeater -->
     </div>   <!-- Panel body  -->

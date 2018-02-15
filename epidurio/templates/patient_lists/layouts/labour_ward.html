@@ -7,11 +7,6 @@
         {% block list_header %}
           {{ patient_list.display_name }}
         {% endblock %}
-
-        <a class="btn btn-secondary pull-right" pathway-episode="row" open-pathway="request_epidural" pathway-callback="removeFromList(row.id)">
-          {% icon 'fa-sign-out' %} Request Epidural
-        </a>
-
       </h2>
     </div>
   </div> <!-- panel-primary -->
