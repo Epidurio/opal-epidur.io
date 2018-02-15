@@ -8,7 +8,10 @@ class RequestEpiduralPathway(pathway.PagePathway):
     slug = "request_epidural"
 
     steps = (
-        models.EpiduralRequest,
+        pathway.Step(
+            model=models.EpiduralRequest,
+            step_controller="EpiduralRequestCtrl"
+        ),
     )
 
     def save(self, data, user=None, episode=None, patient=None):
@@ -26,7 +29,11 @@ class RecordEpiduralPathway(pathway.PagePathway):
     slug = "record_epidural"
 
     steps = (
-        models.EpiduralInsertion,
+        pathway.Step(
+            model=models.EpiduralInsertion,
+            step_controller="EpiduralInsertionCtrl"
+        ),
+
     )
 
     def save(self, data, user=None, episode=None, patient=None):
@@ -44,7 +51,10 @@ class RecordFollowUPPathway(pathway.PagePathway):
     slug = "record_follow_up"
 
     steps = (
-        models.EpiduralFollowUp,
+        pathway.Step(
+            model=models.EpiduralFollowUp,
+            step_controller="FollowUpCtrl"
+        ),
         models.SatisfactionRating,
     )
 

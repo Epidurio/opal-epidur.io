@@ -5,6 +5,9 @@ from opal import models
 
 class EpiduralFollowUp(models.EpisodeSubrecord):
     _is_singleton = True
+    time_of_follow_up = fields.DateTimeField(
+        blank=True, null=True
+    )
     headache = fields.BooleanField(default=False)
     has_not_mobilised = fields.BooleanField(default=False)
     weakness = fields.BooleanField(default=False)

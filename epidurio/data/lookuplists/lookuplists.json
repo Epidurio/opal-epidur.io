@@ -2,13 +2,13 @@
     "proceduretype": [
         {
             "name": "Lumbar Epidural",
-            "synonyms": ["708911002","Insertion of temporary catheter into lumbar epidural space (procedure)", "Epidural for Labour"]
+            "synonyms": []
 
         },
 
         {
             "name": "CSE",
-            "synonyms": ["231261002", "Combined spinal/epidural local anesthetic block (procedure)","Combined Spinal Epidural"]
+            "synonyms": []
 
         }
     ]
