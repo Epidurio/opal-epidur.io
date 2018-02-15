@@ -1,0 +1,11 @@
+{% load panels %}
+<div class="row">
+  <div class="col-md-6">
+    {% record_panel models.EpiduralRequest %}
+    {% record_panel models.EpiduralFollowUp %}
+  </div>
+  <div class="col-md-6">
+    {% record_panel models.EpiduralInsertion %}
+    {% record_panel models.SatisfactionRating %}
+  </div>
+</div>
