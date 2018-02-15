@@ -19,3 +19,6 @@ class Command(BaseCommand):
             demographics_dict = api.generate_random_demographics()
             demographics.update_from_dict(demographics_dict, user)
             episode.set_tag_names([LabourWardList.tag], user)
+            location = episode.location_set.get()
+            location.bed = str(i+1)
+            location.save()
