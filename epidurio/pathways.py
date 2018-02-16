@@ -59,7 +59,7 @@ class RecordFollowUPPathway(pathway.PagePathway):
     )
 
     def save(self, data, user=None, episode=None, patient=None):
-        super(RecordEpiduralPathway, self).save(
+        super(RecordFollowUPPathway, self).save(
             data, user=user, episode=episode, patient=patient
         )
         episode.set_tag_names(

@@ -5,6 +5,7 @@ from opal.core import lookuplists
 from opal.core.fields import ForeignKeyOrFreeText
 
 class ProcedureType(lookuplists.LookupList): pass
+class Indication(lookuplists.LookupList): pass
 
 
 class EpiduralInsertion(models.EpisodeSubrecord):
@@ -24,10 +25,9 @@ class EpiduralInsertion(models.EpisodeSubrecord):
 
 
     # TODO should ideally be SNOMEDized
-    indication = fields.CharField(
-        null=True,
-        max_length=255,
-        help_text="Description of the intervention",
+    indication = ForeignKeyOrFreeText(
+        Indication,
+        help_text="Description of the indication",
     )
 
     number_of_attempts = fields.PositiveIntegerField(

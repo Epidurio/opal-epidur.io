@@ -11,5 +11,19 @@
             "synonyms": []
 
         }
+    ],
+
+    "indication": [
+        {
+            "name": "Labour",
+            "synonyms": []
+
+        },
+
+        {
+            "name": "Trial of instrumental",
+            "synonyms": []
+
+        }
     ]
 }
