@@ -19,8 +19,13 @@ class RequestEpiduralPathway(pathway.PagePathway):
             data, user=user, episode=episode, patient=patient
         )
         episode.set_tag_names(
-            [patient_lists.EpiduralRequestsList.tag], user
+            [patient_lists.EpiduralRequestsList.tag, patient_lists.LabourWardList.tag], user
         )
+
+        
+
+
+
         return patient, episode
 
 
