@@ -3,15 +3,111 @@
         {
             "name": "Lumbar Epidural",
             "synonyms": []
-
         },
 
         {
             "name": "CSE",
+            "synonyms": ["Combined Spinal Epidural (CSE)"]
+        },
+
+        {
+            "name": "Spinal",
+            "synonyms": []
+        },
+
+        {
+            "name": "Epidural Top Up",
+            "synonyms": []
+        },
+
+        {
+            "name": "GA",
+            "synonyms": []
+        },
+
+        {
+            "name": "Blood Patch",
+            "synonyms": []
+        }
+    ],
+
+    "indication": [
+        {
+            "name": "Labour analgesia",
+            "synonyms": []
+
+        },
+
+        {
+            "name": "Category 1 Emergency Cesarean Section",
+            "synonyms": []
+
+        },
+
+        {
+            "name": "Category 2 Emergency Cesarean Section",
+            "synonyms": []
+
+        },
+
+        {
+            "name": "Category 3 Emergency Cesarean Section",
+            "synonyms": []
+
+        },
+
+        {
+            "name": "Category 4 Elective Cesarean Section",
+            "synonyms": []
+
+        },
+
+        {
+            "name": "Trial of Instrumental Delivery",
+            "synonyms": []
+
+        },
+
+        {
+            "name": "Repair of Tear",
+            "synonyms": []
+
+        },
+
+        {
+            "name": "Manual Removal of Placenta",
+            "synonyms": []
+
+        },
+
+        {
+            "name": "Retained Products",
+            "synonyms": []
+
+        },
+
+        {
+            "name": "Uterine Inversion",
+            "synonyms": []
+
+        },
+
+        {
+            "name": "Cervical Suture",
+            "synonyms": []
+
+        },
+
+        {
+            "name": "Major Obsetric Haemorrhage",
             "synonyms": []
 
         }
+
+
+
     ],
+
 
     "indication": [
         {
