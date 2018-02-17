@@ -15,6 +15,7 @@ class Application(application.OpalApplication):
     ]
 
 
+
 @classmethod
 def get_menu_items(klass, user=None):
 

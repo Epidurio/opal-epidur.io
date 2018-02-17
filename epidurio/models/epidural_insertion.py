@@ -35,6 +35,10 @@ class EpiduralInsertion(models.EpisodeSubrecord):
         help_text="The number of discrete epidural insertion attempts",
     )
 
+
+
+
+
     # TODO should ideally be SNOMEDized
     # TODO consider a default value? "no immediate complications"
     complications = fields.CharField(
@@ -68,6 +72,15 @@ class EpiduralInsertion(models.EpisodeSubrecord):
         help_text="Outcome of the epidural insertion attempt",
         max_length=255,
     )
+
+    class Asepsis(models.EpisodeSubrecord):
+        _is_singleton = True
+        gloves = fields.BooleanField(default=True)
+        gown = fields.BooleanField(default=True)
+        hat = fields.BooleanField(default=True)
+        mask = fields.BooleanField(default=True)
+        drape = fields.BooleanField(default=True)
+        chlorhex = fields.BooleanField(default=True)
 
     # NOTE: patient_id is handled because of EpisodeSubrecord inheritance
     # NOTE: created_at, updated_at and user_id are handled because of TrackedModel inheritance
