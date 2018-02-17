@@ -73,14 +73,14 @@ class EpiduralInsertion(models.EpisodeSubrecord):
         max_length=255,
     )
 
-    class Asepsis(models.EpisodeSubrecord):
-        _is_singleton = True
-        gloves = fields.BooleanField(default=True)
-        gown = fields.BooleanField(default=True)
-        hat = fields.BooleanField(default=True)
-        mask = fields.BooleanField(default=True)
-        drape = fields.BooleanField(default=True)
-        chlorhex = fields.BooleanField(default=True)
+
+
+    gloves = fields.BooleanField(default=True)
+    gown = fields.BooleanField(default=True)
+    hat = fields.BooleanField(default=True)
+    mask = fields.BooleanField(default=True)
+    drape = fields.BooleanField(default=True)
+    chlorhex = fields.BooleanField(default=True)
 
     # NOTE: patient_id is handled because of EpisodeSubrecord inheritance
     # NOTE: created_at, updated_at and user_id are handled because of TrackedModel inheritance

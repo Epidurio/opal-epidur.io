@@ -5,10 +5,17 @@
 {% select field="EpiduralInsertion.indication" %}
 {% input field="EpiduralInsertion.complications" %}
 {% input field="EpiduralInsertion.outcome" %}
-{% checkbox field="EpiduralInsertion.aspesis.gloves" %}
-
 
 <div class="form-group">
   <label class="control-label col-sm-3">
     Full Asepsis:
   </label>
+
+  <p class="form-control-static col-sm-8">
+    {% checkbox field="EpiduralInsertion.gloves" %}
+    {% checkbox field="EpiduralInsertion.gown" %}
+    {% checkbox field="EpiduralInsertion.hat" %}
+    {% checkbox field="EpiduralInsertion.mask" %}
+    {% checkbox field="EpiduralInsertion.drape" %}
+ </p>
+</div>
