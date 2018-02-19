@@ -1,4 +1,4 @@
-from .epidural_insertion import EpiduralInsertion
+from .epidural_insertion import EpiduralInsertion, Asepsis
 from .epidural_request import EpiduralRequest
 from .epidural_follow_up import EpiduralFollowUp, SatisfactionRating
 
@@ -27,7 +27,8 @@ __all__ = [
     'EpiduralRequest',
     'EpiduralFollowUp',
     'SatisfactionRating',
-    
+    'Asepsis',
+
 
 
 ]

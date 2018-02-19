@@ -22,7 +22,7 @@ class RequestEpiduralPathway(pathway.PagePathway):
             [patient_lists.EpiduralRequestsList.tag, patient_lists.LabourWardList.tag], user
         )
 
-        
+
 
 
 
@@ -38,6 +38,7 @@ class RecordEpiduralPathway(pathway.PagePathway):
             model=models.EpiduralInsertion,
             step_controller="EpiduralInsertionCtrl"
         ),
+        models.Asepsis,
 
     )
 

@@ -73,7 +73,8 @@ class EpiduralInsertion(models.EpisodeSubrecord):
         max_length=255,
     )
 
-
+class Asepsis(models.EpisodeSubrecord):
+    _is_singleton = True
 
     gloves = fields.BooleanField(default=True)
     gown = fields.BooleanField(default=True)
