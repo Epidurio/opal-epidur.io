@@ -41,6 +41,7 @@ class RecordEpiduralPathway(pathway.PagePathway):
         models.Consent,
         models.Asepsis,
         models.Technique,
+        models.NeuroaxialDrugs,
 
 
     )

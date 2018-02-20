@@ -6,6 +6,10 @@ from opal.core.fields import ForeignKeyOrFreeText
 
 class ProcedureType(lookuplists.LookupList): pass
 class Indication(lookuplists.LookupList): pass
+class SpinalOpiate(lookuplists.LookupList): pass
+class EpiduralOpiate(lookuplists.LookupList): pass
+class SpinalLocal(lookuplists.LookupList): pass
+class EpiduralLocal(lookuplists.LookupList): pass
 
 
 class EpiduralInsertion(models.EpisodeSubrecord):
@@ -158,8 +162,56 @@ class Technique(models.EpisodeSubrecord):
         choices=CATHETER_IN_EPIDURAL_SPACE_CHOICES,
         blank=True, null=True,
         max_length=255,
+        default=3,
     )
 
+class NeuroaxialDrugs(models.EpisodeSubrecord):
+    _is_singleton = True
+
+
+
+
+    spinal_opiate = ForeignKeyOrFreeText(
+        SpinalOpiate,
+
+    )
+    spinal_opiate_dose = fields.PositiveIntegerField(
+        null=True
+
+
+    )
+
+
+    local_anaesthetic_spinal = ForeignKeyOrFreeText(
+        SpinalLocal,
+
+    )
+
+    spinal_local_anaesthetic_volume = fields.PositiveIntegerField(
+        null=True
+
+    )
+
+    epidural_opiate = ForeignKeyOrFreeText(
+        EpiduralOpiate,
+
+    )
+    epidural_opiate_dose = fields.PositiveIntegerField(
+        null=True
+
+    )
+
+
+    local_anaesthetic_epidural = ForeignKeyOrFreeText(
+        EpiduralLocal,
+
+    )
+
+    epidural_local_anaesthetic_volume = fields.PositiveIntegerField(
+        null=True
+
+
+    )
 
 
 

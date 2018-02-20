@@ -98,8 +98,107 @@
 
 
 
-    ]
+    ],
 
+    "spinalopiate": [
+        {
+            "name": "Fentanyl",
+            "synonyms": []
+        },
+
+        {
+            "name": "Diamorphine",
+            "synonyms": []
+        },
+
+        {
+            "name": "Morphine",
+            "synonyms": [ ]
+        }
+
+
+    ]
+    ,
+
+    "spinallocal": [
+
+        {
+            "name": "0.5% Heavy Bupivicaine",
+            "synonyms": []
+        },
+
+        {
+            "name": "0.1% Plain Bupivicaine + 2 mcg/ml Fentanyl",
+            "synonyms": []
+        },
+
+        {
+            "name": "0.25% Plain Bupivicaine",
+            "synonyms": []
+        },
+
+        {
+            "name": "0.5% Plain Bupivicaine",
+            "synonyms": []
+        }
+
+
+    ],
+
+    "epiduralopiate": [
+        {
+            "name": "Fentanyl",
+            "synonyms": []
+        },
+
+        {
+            "name": "Diamorphine",
+            "synonyms": []
+        },
+
+        {
+            "name": "Morphine",
+            "synonyms": [ ]
+        }
+
+    ],
+
+    "epidurallocal": [
+
+        {
+            "name": "0.5% Heavy Bupivicaine",
+            "synonyms": []
+        },
+
+        {
+            "name": "0.1% Plain Bupivicaine + 2 mcg/ml Fentanyl",
+            "synonyms": []
+        },
+
+        {
+            "name": "0.25% Plain Bupivicaine",
+            "synonyms": []
+        },
+
+        {
+            "name": "0.5% Plain Bupivicaine",
+            "synonyms": []
+        },
+
+        {
+            "name": "0.75% Ropivicaine",
+            "synonyms": []
+        }
+
+        ,
+
+        {
+            "name": "Fast Mix",
+            "synonyms": []
+        }
+
+
+    ]
 
 
 }

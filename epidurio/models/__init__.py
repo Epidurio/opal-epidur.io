@@ -1,4 +1,4 @@
-from .epidural_insertion import EpiduralInsertion, Asepsis, Consent, Technique
+from .epidural_insertion import EpiduralInsertion, Asepsis, Consent, Technique, NeuroaxialDrugs
 from .epidural_request import EpiduralRequest
 from .epidural_follow_up import EpiduralFollowUp, SatisfactionRating
 
@@ -30,6 +30,7 @@ __all__ = [
     'Asepsis',
     'Consent',
     'Technique',
+    'NeuroaxialDrugs',
 
 
 
