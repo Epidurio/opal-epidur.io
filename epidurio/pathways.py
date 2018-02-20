@@ -52,7 +52,7 @@ class RecordEpiduralPathway(pathway.PagePathway):
             data, user=user, episode=episode, patient=patient
         )
         episode.set_tag_names(
-            [patient_lists.EpiduralFollowupList.tag], user
+            [patient_lists.EpiduralFollowupList.tag, patient_lists.LabourWardList.tag], user
         )
         return patient, episode
 
@@ -74,6 +74,6 @@ class RecordFollowUPPathway(pathway.PagePathway):
             data, user=user, episode=episode, patient=patient
         )
         episode.set_tag_names(
-            [], user
+            [patient_lists.LabourWardList.tag], user
         )
         return patient, episode

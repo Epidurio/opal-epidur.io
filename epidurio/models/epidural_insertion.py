@@ -30,11 +30,13 @@ class EpiduralInsertion(models.EpisodeSubrecord):
     #needs to be the current user
     performed_by = fields.TextField(
         null=True,
+        blank=True,
 
     )
     #pick from list of anaesthetist users
     supervised_by = fields.TextField(
         null=True,
+        blank=True,
 
     )
 
@@ -201,7 +203,8 @@ class NeuroaxialDrugs(models.EpisodeSubrecord):
 
     )
     spinal_opiate_dose = fields.PositiveIntegerField(
-        null=True
+        null=True,
+        blank=True,
 
 
     )
@@ -213,7 +216,8 @@ class NeuroaxialDrugs(models.EpisodeSubrecord):
     )
 
     spinal_local_anaesthetic_volume = fields.PositiveIntegerField(
-        null=True
+        null=True,
+        blank=True,
 
     )
 
@@ -222,7 +226,8 @@ class NeuroaxialDrugs(models.EpisodeSubrecord):
 
     )
     epidural_opiate_dose = fields.PositiveIntegerField(
-        null=True
+        null=True,
+        blank=True,
 
     )
 
@@ -233,7 +238,8 @@ class NeuroaxialDrugs(models.EpisodeSubrecord):
     )
 
     epidural_local_anaesthetic_volume = fields.PositiveIntegerField(
-        null=True
+        null=True,
+        blank=True,
 
 
     )
