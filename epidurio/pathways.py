@@ -38,7 +38,10 @@ class RecordEpiduralPathway(pathway.PagePathway):
             model=models.EpiduralInsertion,
             step_controller="EpiduralInsertionCtrl"
         ),
+        models.Consent,
         models.Asepsis,
+        models.Technique,
+
 
     )
 

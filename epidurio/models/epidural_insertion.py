@@ -30,48 +30,25 @@ class EpiduralInsertion(models.EpisodeSubrecord):
         help_text="Description of the indication",
     )
 
-    number_of_attempts = fields.PositiveIntegerField(
-        default=1,
-        help_text="The number of discrete epidural insertion attempts",
-    )
+class Consent(models.EpisodeSubrecord):
+    _is_singleton = True
+
+    failure = fields.BooleanField(default=True)
+    analgesia_expectations = fields.BooleanField(default=True)
+    shivering = fields.BooleanField(default=True)
+    pruritus = fields.BooleanField(default=True)
+    blood_pressure_drop = fields.BooleanField(default=True)
+    nausea_and_vomiting = fields.BooleanField(default=True)
+    motor_block = fields.BooleanField(default=True)
+    delayed_second_stage = fields.BooleanField(default=True)
+    instrumental_delivery = fields.BooleanField(default=True)
+    headache = fields.BooleanField(default=True)
+    temporary_nerve_damage  = fields.BooleanField(default=True)
+    permanent_nerve_damage = fields.BooleanField(default=True)
+    severe_complication = fields.BooleanField(default=True)
+    other = fields.TextField(null=True)
 
 
-
-
-
-    # TODO should ideally be SNOMEDized
-    # TODO consider a default value? "no immediate complications"
-    complications = fields.CharField(
-        blank=True, null=True,
-        max_length=255,
-        help_text="Complications caused by the epidural insertion",
-    )
-
-    # TODO should ideally be SNOMEDized
-    # TODO any other options @TimCKnowles?
-    OUTCOME_CHOICES = (
-        (
-            "Successful epidural insertion and effective analgesia",
-            "Successful epidural insertion and effective analgesia"
-        ),
-        (
-            "Successful insertion of epidural catheter",
-            "Successful insertion of epidural catheter"
-        ),
-        (
-            "Epidural insertion caused dural puncture",
-            "Epidural insertion caused dural puncture"
-        ),
-        (
-            "Failed epidural insertion", "Failed epidural insertion"
-        ),
-    )
-    outcome = fields.CharField(
-        choices=OUTCOME_CHOICES,
-        blank=True, null=True,
-        help_text="Outcome of the epidural insertion attempt",
-        max_length=255,
-    )
 
 class Asepsis(models.EpisodeSubrecord):
     _is_singleton = True
@@ -82,6 +59,112 @@ class Asepsis(models.EpisodeSubrecord):
     mask = fields.BooleanField(default=True)
     drape = fields.BooleanField(default=True)
     chlorhex = fields.BooleanField(default=True)
+
+class Technique(models.EpisodeSubrecord):
+    _is_singleton = True
+
+    POSITION_CHOICES = (
+    ('Sitting', 'Sitting',),
+    ('Lateral', 'Lateral',),
+)
+    LEVEL_CHOICES = (
+    ('L2/3', 'L2/3',),
+    ('L3/4', 'L3/4',),
+    ('L4/5', 'L4/5',),
+    ('Other', 'Other',),
+)
+
+    APPROACH_CHOICES = (
+    ('Midline', 'Midline',),
+    ('Paramedian', 'Paramedian',),
+)
+
+    TUOHY_NEEDLE_CHOICES = (
+    ('16G', '16G',),
+    ('18G', '18G',),
+)
+    SPINAL_NEEDLE_CHOICES = (
+    ('26G', '26G',),
+    ('27G', '27G',),
+)
+    LOR_CHOICES = (
+    ('Saline', 'Saline',),
+    ('Air', 'Air',),
+)
+    CATHETER_IN_EPIDURAL_SPACE_CHOICES = (
+    ('2 cm', '2 cm',),
+    ('3 cm', '3 cm',),
+    ('4 cm', '4 cm',),
+    ('5 cm', '5 cm',),
+    ('6 cm', '6 cm',),
+)
+    LIDOCAINE_CHOICES = (
+    ('1 %', '1 %',),
+    ('2 %', '2 %',),
+    )
+    patient_position  = fields.CharField(
+        choices=POSITION_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+
+    level  = fields.CharField(
+        choices=LEVEL_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+
+    approach  = fields.CharField(
+        choices=APPROACH_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+
+    lidocaine  = fields.CharField(
+        choices=LIDOCAINE_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+
+    lidocaine_volume = fields.PositiveIntegerField(
+        default=3,
+
+    )
+
+    tuohy_needle_choices = fields.CharField(
+        choices=TUOHY_NEEDLE_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+
+    spinal_needle_choices = fields.CharField(
+        choices=SPINAL_NEEDLE_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+
+    loss_of_resistance = fields.CharField(
+        choices=LOR_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+
+    depth_of_epidural_space= fields.PositiveIntegerField(
+        default=3,
+
+    )
+
+    catheter_length_in_epidural_space = fields.CharField(
+        choices=CATHETER_IN_EPIDURAL_SPACE_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+
+
+
+
+
+
 
     # NOTE: patient_id is handled because of EpisodeSubrecord inheritance
     # NOTE: created_at, updated_at and user_id are handled because of TrackedModel inheritance

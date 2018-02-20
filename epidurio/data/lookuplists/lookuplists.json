@@ -1,7 +1,7 @@
 {
     "proceduretype": [
         {
-            "name": "Lumbar Epidural",
+            "name": "Epidural",
             "synonyms": []
         },
 
@@ -12,21 +12,6 @@
 
         {
             "name": "Spinal",
-            "synonyms": []
-        },
-
-        {
-            "name": "Epidural Top Up",
-            "synonyms": []
-        },
-
-        {
-            "name": "GA",
-            "synonyms": []
-        },
-
-        {
-            "name": "Blood Patch",
             "synonyms": []
         }
     ],
@@ -100,6 +85,13 @@
 
         {
             "name": "Major Obsetric Haemorrhage",
+            "synonyms": []
+
+        }
+        ,
+
+        {
+            "name": "Dural Puncture",
             "synonyms": []
 
         }
