@@ -1,4 +1,7 @@
 {% load forms %}
 {% datetimepicker field="EpiduralInsertion.insertion_date_time" %}
+{% input field="EpiduralInsertion.performed_by" %}
+{% input field="EpiduralInsertion.supervised_by" %}
 {% select field="EpiduralInsertion.insertion_record" label="Procedure Name" %}
 {% select field="EpiduralInsertion.indication" %}
+{% radio field="EpiduralInsertion.cervical_dilation" %}

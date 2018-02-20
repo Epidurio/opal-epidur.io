@@ -15,10 +15,27 @@ class EpiduralLocal(lookuplists.LookupList): pass
 class EpiduralInsertion(models.EpisodeSubrecord):
     _is_singleton = True
 
+    CERVIX_CHOICES = (
+    ('<2 cm', '<2 cm',),
+    ('3-5 cm', '3-5 cm',),
+    ('> 6 cm', '> 6 cm',),
+)
+
     insertion_date_time = fields.DateTimeField(
         null=True,
         # default=timezone.now,  (causes an Opal APIerror if uncommented)
         help_text="Date and time of the epidural insertion or epidural insertion attempt",
+    )
+
+    #needs to be the current user
+    performed_by = fields.TextField(
+        null=True,
+
+    )
+    #pick from list of anaesthetist users
+    supervised_by = fields.TextField(
+        null=True,
+
     )
 
 
@@ -33,6 +50,14 @@ class EpiduralInsertion(models.EpisodeSubrecord):
         Indication,
         help_text="Description of the indication",
     )
+
+
+    cervical_dilation  = fields.CharField(
+        choices=CERVIX_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+
 
 class Consent(models.EpisodeSubrecord):
     _is_singleton = True
@@ -214,9 +239,54 @@ class NeuroaxialDrugs(models.EpisodeSubrecord):
     )
 
 
+class ProcedureNotes(models.EpisodeSubrecord):
+    _is_singleton = True
+
+    DIFFICULTY_CHOICES = (
+    ('Straightforward', 'Straightforward',),
+    ('Moderately Difficult', 'Moderately Difficult',),
+    ('Difficult', 'Difficult',),
+)
+
+    PARASTHESIA_CHOICES = (
+    ('None', 'None',),
+    ('Spinal Needle', 'Spinal Needle',),
+    ('Tuohy Needle', 'Tuohy Needle',),
+    ('Epidural Catheter', 'Epidural Catheter',),
+)
+    COMPLICATION_CHOICES = (
+    ('None', 'None',),
+    ('Blood in catheter', 'Blood in catheter',),
+    ('Dural Puncture', 'Dural Puncture',),
+    ('CSF aspirated', 'CSF aspirated',),
+    ('Bony Obstruction', 'Bony Obstruction',),
+    ('>1 interspace', '>1 interspace',),
+
+)
 
 
 
+    difficulty  = fields.CharField(
+        choices=DIFFICULTY_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+
+    parasthesia  = fields.CharField(
+        choices=PARASTHESIA_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+    complications  = fields.CharField(
+        choices=COMPLICATION_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+
+    notes = fields.TextField(
+        null=True,
+
+    )
 
     # NOTE: patient_id is handled because of EpisodeSubrecord inheritance
     # NOTE: created_at, updated_at and user_id are handled because of TrackedModel inheritance

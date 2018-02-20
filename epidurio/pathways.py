@@ -42,6 +42,7 @@ class RecordEpiduralPathway(pathway.PagePathway):
         models.Asepsis,
         models.Technique,
         models.NeuroaxialDrugs,
+        models.ProcedureNotes,
 
 
     )
