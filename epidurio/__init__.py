@@ -22,7 +22,7 @@ class Application(application.OpalApplication):
         items = []
 
         menuitem = menus.MenuItem(
-            href='#/list/labour/',
+            href='/#/list/labour/',
             display="Labour Ward",
             icon="fa-plus-circle",
             activepattern='labour',
@@ -32,7 +32,7 @@ class Application(application.OpalApplication):
         items.append(menuitem)
 
         menuitem = menus.MenuItem(
-            href='#/list/epidural_requested/',
+            href='/#/list/epidural_requested/',
             display="Epidurals Requested",
             icon="fa-plus-circle",
             activepattern='epidural_requested',
@@ -42,7 +42,7 @@ class Application(application.OpalApplication):
         items.append(menuitem)
 
         menuitem = menus.MenuItem(
-            href='#/list/epidural_completed/',
+            href='/#/list/epidural_completed/',
             display="Follow Ups",
             icon="fa fa-mail-forward",
             activepattern='epidural_completed',
