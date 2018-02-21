@@ -1,9 +1,11 @@
 {% load forms %}
+<span ng-show="editing.epidural_insertion.procedure !== 'Epidural'">
+  {% select field="NeuroaxialDrugs.spinal_opiate" %}
+  {% input field="NeuroaxialDrugs.spinal_opiate_dose" unit="mcg" %}
+  {% select field="NeuroaxialDrugs.local_anaesthetic_spinal" %}
+  {% input field="NeuroaxialDrugs.spinal_local_anaesthetic_volume" unit="ml" %}
+</span>
 
-{% select field="NeuroaxialDrugs.spinal_opiate" %}
-{% input field="NeuroaxialDrugs.spinal_opiate_dose" unit="mcg" %}
-{% select field="NeuroaxialDrugs.local_anaesthetic_spinal" %}
-{% input field="NeuroaxialDrugs.spinal_local_anaesthetic_volume" unit="ml" %}
 {% select field="NeuroaxialDrugs.epidural_opiate" %}
 {% input field="NeuroaxialDrugs.epidural_opiate_dose" unit="mg" %}
 {% select field="NeuroaxialDrugs.local_anaesthetic_epidural" %}
