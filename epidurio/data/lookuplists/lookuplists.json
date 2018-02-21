@@ -4,201 +4,139 @@
             "name": "Epidural",
             "synonyms": []
         },
-
         {
             "name": "CSE",
             "synonyms": ["Combined Spinal Epidural (CSE)"]
         },
-
         {
             "name": "Spinal",
             "synonyms": []
         }
     ],
-
     "indication": [
         {
             "name": "Labour analgesia",
             "synonyms": []
-
         },
-
         {
-            "name": "Category 1 Emergency Cesarean Section",
+            "name": "Category 1 (Emergency) Caesarean Section",
             "synonyms": []
-
         },
-
         {
-            "name": "Category 2 Emergency Cesarean Section",
+            "name": "Category 2 (Emergency) Caesarean Section",
             "synonyms": []
-
         },
-
         {
-            "name": "Category 3 Emergency Cesarean Section",
+            "name": "Category 3 (Emergency) Caesarean Section",
             "synonyms": []
-
         },
-
         {
-            "name": "Category 4 Elective Cesarean Section",
+            "name": "Category 4 (Elective) Caesarean Section",
             "synonyms": []
-
         },
-
         {
             "name": "Trial of Instrumental Delivery",
             "synonyms": []
-
         },
-
         {
             "name": "Repair of Tear",
             "synonyms": []
-
         },
-
         {
             "name": "Manual Removal of Placenta",
             "synonyms": []
-
         },
-
         {
             "name": "Retained Products",
             "synonyms": []
-
         },
-
         {
             "name": "Uterine Inversion",
             "synonyms": []
-
         },
-
         {
             "name": "Cervical Suture",
             "synonyms": []
-
         },
-
         {
             "name": "Major Obsetric Haemorrhage",
             "synonyms": []
-
-        }
-        ,
-
+        },
         {
             "name": "Dural Puncture",
             "synonyms": []
-
         }
-
-
-
     ],
-
     "spinalopiate": [
         {
             "name": "Fentanyl",
             "synonyms": []
         },
-
         {
             "name": "Diamorphine",
             "synonyms": []
         },
-
         {
             "name": "Morphine",
-            "synonyms": [ ]
-        }
-
-
-    ]
-    ,
-
-    "spinallocal": [
-
-        {
-            "name": "0.5% Heavy Bupivicaine",
-            "synonyms": []
-        },
-
-        {
-            "name": "0.1% Plain Bupivicaine + 2 mcg/ml Fentanyl",
-            "synonyms": []
-        },
-
-        {
-            "name": "0.25% Plain Bupivicaine",
-            "synonyms": []
-        },
-
-        {
-            "name": "0.5% Plain Bupivicaine",
             "synonyms": []
         }
-
-
     ],
-
+    "spinallocal": [
+        {
+            "name": "0.5% Heavy Bupivacaine",
+            "synonyms": []
+        },
+        {
+            "name": "0.1% Plain Bupivacaine + 2 mcg/ml Fentanyl",
+            "synonyms": []
+        },
+        {
+            "name": "0.25% Plain Bupivacaine",
+            "synonyms": []
+        },
+        {
+            "name": "0.5% Plain Bupivacaine",
+            "synonyms": []
+        }
+    ],
     "epiduralopiate": [
         {
             "name": "Fentanyl",
             "synonyms": []
         },
-
         {
             "name": "Diamorphine",
             "synonyms": []
         },
-
         {
             "name": "Morphine",
             "synonyms": [ ]
         }
-
     ],
-
     "epidurallocal": [
-
         {
-            "name": "0.5% Heavy Bupivicaine",
+            "name": "0.5% Heavy Bupivacaine",
             "synonyms": []
         },
-
         {
-            "name": "0.1% Plain Bupivicaine + 2 mcg/ml Fentanyl",
+            "name": "0.1% Plain Bupivacaine + 2 mcg/ml Fentanyl",
             "synonyms": []
         },
-
         {
-            "name": "0.25% Plain Bupivicaine",
+            "name": "0.25% Plain Bupivacaine",
             "synonyms": []
         },
-
         {
-            "name": "0.5% Plain Bupivicaine",
+            "name": "0.5% Plain Bupivacaine",
             "synonyms": []
         },
-
         {
-            "name": "0.75% Ropivicaine",
+            "name": "0.75% Ropivacaine",
             "synonyms": []
-        }
-
-        ,
-
+        },
         {
             "name": "Fast Mix",
             "synonyms": []
         }
-
-
     ]
-
-
 }
