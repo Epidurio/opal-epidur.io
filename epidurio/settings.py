@@ -270,8 +270,8 @@ DEFAULT_DOMAIN = 'http://epidurio.com/'
 
 # Begins OPAL Settings you should edit !
 
-OPAL_BRAND_NAME = 'epidurio'
-VERSION_NUMBER  = '<0.0.1'
+OPAL_BRAND_NAME = 'epidur.io'
+VERSION_NUMBER  = '0.1.0alpha'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

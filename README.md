@@ -46,8 +46,11 @@ To get started, run the following commands:
 * check out Admin interface at /admin
 
 
-
-
 ### Deploying your new Opal application to Heroku for testing/demo
-
 http://opal.openhealthcare.org.uk/docs/guides/deployment/
+
+
+### Running Epidur.io in development
+* to create seed data with patients and locations in Labour Ward:
+
+`python manage.py create_dev_labour_ward`
