@@ -1,0 +1,244 @@
+{
+    "name_of_procedure": [
+        {
+            "name": "Lumbar Epidural",
+            "synonyms": ["708911002","Insertion of temporary catheter into lumbar epidural space (procedure)", "Epidural for Labour"]
+
+        },
+
+        {
+            "name": "CSE",
+            "synonyms": ["231261002", "Combined spinal/epidural local anesthetic block (procedure)","Combined Spinal Epidural"]
+
+        },
+        {
+            "name": "Spinal",
+            "synonyms": ["231261002", "Combined spinal/epidural local anesthetic block (procedure)","Combined Spinal Epidural"]
+
+        },
+    ]
+
+    "Indication": [
+        {
+            "name": "Lumbar Epidural",
+            "synonyms": ["708911002","Insertion of temporary catheter into lumbar epidural space (procedure)", "Epidural for Labour"]
+
+        },
+
+        {
+            "name": "CSE",
+            "synonyms": ["231261002", "Combined spinal/epidural local anesthetic block (procedure)","Combined Spinal Epidural"]
+
+        },
+        {
+            "name": "Spinal",
+            "synonyms": ["231261002", "Combined spinal/epidural local anesthetic block (procedure)","Combined Spinal Epidural"]
+
+        },
+    ]
+}
+
+
+Procedures:
+
+Lumbar Epidural:
+708911002 |Insertion of temporary catheter into lumbar epidural space (procedure)|
+
+Combined Spinal Epidural (CSE):
+231261002 |Combined spinal/epidural local anesthetic block (procedure)|
+
+Spinal:
+231249005 |Local anesthetic intrathecal block (procedure)|
+
+Epidural Top Up:
+231260001 |Administration of epidural top-up (procedure)|
+
+GA:
+50697003 |General anesthesia (procedure)|
+
+ENTONOX:
+271419000 |Gas and air analgesia in labor (procedure)|
+
+Blood Patch:
+
+
+
+
+
+Indications:
+
+Labour analgesia
+247412007 |Labor pain (finding)|
+
+Emergency cesarean section
+274130007 |Emergency cesarean section (procedure)|
+
+Elective cesarean section
+177141003 | Elective cesarean section (procedure) |
+
+Repair of Tear
+177217006 |Immediate repair of obstetric laceration (procedure)|
+
+Trial of Instrumental Delivery:
+69422002 |Trial forceps delivery (procedure)|
+177176001 |Trial of vacuum delivery (procedure)|
+
+Manual Removal of Placenta:
+28233006 |Manual removal of retained placenta (procedure)|
+
+Retained Products:
+44216000 |Retained products of conception, following delivery with hemorrhage (disorder)|
+
+Uterine Inversion:
+199970007 |Obstetric inversion of uterus with postnatal problem (disorder)|
+
+Cervical Suture:
+265636007 |Cerclage of cervix (procedure)|
+
+Obsteric Haemorrhage:
+
+
+Technique:
+
+Position:
+
+sitting:
+33586001 |Sitting position (finding)|
+Lateral:
+32185000 |Lateral decubitus position (finding)|
+
+Lateral:
+Full Asepsis:
+275827007 |Maintaining asepsis (procedure)|
+33690211000001109 |Chlorhexidine gluconate 0.5% / Isopropyl alcohol 70% solution (product)|
+Allow to Dry:
+Pack Opened:
+
+Gloves:
+706143009 |Surgical glove (physical object)|
+Gown:
+463983006 |Operating room gown, single-use (physical object)|
+Hat:
+465668002 |Surgical cap, single-use (physical object)|
+Mask:
+465635009 |Surgical face mask, single-use (physical object)|
+Drape:
+65105002 |Surgical drapes, device (physical object)|
+
+Intervertebral Space:
+
+L2/3
+67459009 | Intervertebral disc structure of second lumbar vertebra (body structure) |
+
+L3/4
+62551000 |Intervertebral disc structure of third lumbar vertebra (body structure)|
+
+L4/5
+427094005 |L4/5 disc (body structure)|
+
+Local Anaesthesia:
+231306007 |Skin infiltration of local anesthetic (procedure)|
+347669003 |Lidocaine hydrochloride 1% injection solution ampule (product)|
+347670002 |Lidocaine hydrochloride 2% injection solution ampule (product)|
+258773002 |Milliliter (qualifier value)|
+
+Needle Type:
+397999009 |Pencil point spinal needle (physical object)|
+421558009 |Tuohy needle (physical object)|
+
+
+
+Needle Guage:
+16G
+277305006 |16G (qualifier value)|
+18G
+277306007 |18G (qualifier value)|
+25G
+277307003 |25G (qualifier value)|
+27G
+277309000 |27G (qualifier value)|
+
+LOR:
+309796000 |Loss of resistance technique (qualifier value)|
+309797009 |Loss of resistance to air (qualifier value)|
+309798004 |Loss of resistance to saline (qualifier value)|
+
+Depth of Space:
+398039007 |Depth of epidural space (attribute)|
+Integer select nearest .5cm
+
+
+Length of epidural catheter in Space:
+398296006 |Length of epidural catheter in space (qualifier value)|
+3cm | 4cm | 5cm | 6cm
+
+Drugs:
+
+spinal component:
+79945003 |Intrathecal injection (procedure)|
+
+Not applicable:
+385432009 |Not applicable (qualifier value)|
+Heavy Bupivicaine 0.5%
+334167005 |Bupivacaine 0.5%+glucose injection solution 4mL ampule (product)|
+258773002 |Milliliter (qualifier value)|
+Float
+
+Plain Bupivicaine 0.25%
+34745011000001109 |Bupivacaine 25mg/10ml (0.25%) solution for injection vials (product)|
+Low dose mix:
+17071311000001104 |Bupivacaine 500mg/500ml (0.1%) / Fentanyl 1mg/500ml infusion bags (product)|
+Fentanyl 50mcg /ml
+40648001 |Fentanyl (product)|
+Diamorphine 1mg /ml
+396019002 |Diamorphine hydrochloride (substance)|
+
+Epidural:
+Low dose mix:
+17071311000001104 |Bupivacaine 500mg/500ml (0.1%) / Fentanyl 1mg/500ml infusion bags (product)|
+Fast Mix:
+Lignocaine 2% + Adrenaline 1:200,000 (5mcg /ml) + 2mls Sodium Bicarbonate
+Bupivicaine 0.5%
+347585003 |Bupivacaine 5mg/mL(0.5%) injection solution 10mL ampule (product)|
+Bupivicaine 0.25%
+34745011000001109 |Bupivacaine 25mg/10ml (0.25%) solution for injection vials (product)|
+Ropivicaine 0.75%
+334198007 |Ropivacaine hydrochloride 7.5mg/mL injection solution 10mL ampule (product)|
+Fentanyl
+40648001 |Fentanyl (product)|
+Diamorphine
+396019002 |Diamorphine hydrochloride (substance)|
+
+
+Insertion Comments:
+
+No immediate complications:
+#need to find SMOWMed for this
+
+442718000 |Aspiration test negative for blood during procedure (finding)|
+442710007 |Aspiration test negative for cerebrospinal fluid during procedure (finding)|
+
+Aspiration test positive for blood during procedure (finding)|
+#no code
+Aspiration test positive for cerebrospinal fluid during procedure (finding)|
+#no code
+
+Failed insertion:
+698826004 |Failed epidural anesthesia (situation)|
+
+Dural Puncture:
+398042001 |Accidental dural puncture (disorder)|
+
+Parasthesia:
+#does this exist in snowmed?
+247347003 |Discomfort (finding)|
+Dysathesia:
+#does this exist in snowmed?
+22253000 | Pain (finding) |
+Needle Type:
+397999009 |Pencil point spinal needle (physical object)|
+421558009 |Tuohy needle (physical object)|
+30610008 |Epidural catheter, device (physical object)|
+
+#could combine terms to describe insertion complication e.g.
+#247347003 |Discomfort (finding)| Dysathesia + 30610008 |Epidural catheter, device (physical object)|

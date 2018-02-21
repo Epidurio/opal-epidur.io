@@ -16,6 +16,10 @@ class EpiduralFollowUp(models.EpisodeSubrecord):
     has_not_passed_urine = fields.BooleanField(default=False)
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 85f2f3ec15414ffe20d648048c24fe0d75b0ad12
 class SatisfactionRating(models.EpisodeSubrecord):
     _is_singleton = True
     SATISFACTION_CHOICES = (
@@ -24,7 +28,12 @@ class SatisfactionRating(models.EpisodeSubrecord):
         ('Very Satisfied', 'Very Satisfied',),
     )
 
+<<<<<<< HEAD
     labor_analgesia = fields.CharField(
+=======
+
+    labor_analgesia  = fields.CharField(
+>>>>>>> 85f2f3ec15414ffe20d648048c24fe0d75b0ad12
         choices=SATISFACTION_CHOICES,
         blank=True, null=True,
         max_length=255,

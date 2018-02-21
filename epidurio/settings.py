@@ -167,6 +167,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admin',
     'axes',
     'reversion',
     'rest_framework',
@@ -177,7 +178,7 @@ INSTALLED_APPS = (
     'opal.core.pathway',
     'opal.core.referencedata',
     'epidurio',
-    'django.contrib.admin',
+    'intrahospital_api',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -258,7 +259,7 @@ OPAL_LOG_OUT_DURATION = OPAL_LOG_OUT_MINUTES*60*1000
 # OPAL_FLOW_SERVICE = 'AppFlow'
 
 # Enable/Disable autocomplete from navbar search
-OPAL_AUTOCOMPLETE_SEARCH = False
+OPAL_AUTOCOMPLETE_SEARCH = True
 
 INTEGRATING = False
 
