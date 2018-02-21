@@ -4,6 +4,7 @@ from opal import models
 from opal.core import lookuplists
 from opal.core.fields import ForeignKeyOrFreeText
 
+
 class ProcedureType(lookuplists.LookupList): pass
 class Indication(lookuplists.LookupList): pass
 class SpinalOpiate(lookuplists.LookupList): pass
