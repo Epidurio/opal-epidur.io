@@ -12,6 +12,7 @@ class Command(BaseCommand):
         api = get_api()
         demographics = api.generate_random_demographics()
         user = User.objects.first()
+        patient = Patient.objects.all().delete()
         for i in range(10):
             patient = Patient.objects.create()
             episode = patient.create_episode()
