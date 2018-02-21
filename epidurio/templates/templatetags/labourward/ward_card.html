@@ -1,6 +1,6 @@
 {% load forms %}
 <div class="col-md-3">
-  <div class="panel" style="min-height: 150px;"> <!-- TODO Don't do this. -->
+  <div class="panel panel-default" style="min-height: 150px;"> <!-- TODO Don't do this. -->
     <div class="panel-heading">
       <h3 class="panel-title">{{ room_name }}</h3>
     </div>
@@ -18,11 +18,11 @@
               <br />
               MRN [[ row.demographics[0].hospital_number ]]
             </div> <!--  PID Container -->
-              <div ng-hide="row.epidural_request[0].request_date_time">
-                <a class="btn btn-secondary pull-right"
-                pathway-episode="row"
-                pathway-callback="refresh(row.id)"
-                open-pathway="request_epidural">
+            <div ng-hide="row.epidural_request[0].request_date_time">
+              <a class="btn btn-secondary pull-right"
+                 pathway-episode="row"
+                 pathway-callback="refresh(row.id)"
+                 open-pathway="request_epidural">
                 {% icon 'fa-plus-circle' %} Request Epidural
               </a>
             </div>
@@ -42,7 +42,6 @@
               </div>
             </div>
           <!-- removed from after ln 24 to prevent removal from list pathway-callback="removeFromList(row.id)"-->
-
         </div>
         </a>
       </div> <!-- Row repeater -->
