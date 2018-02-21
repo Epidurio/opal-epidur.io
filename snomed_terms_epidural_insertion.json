@@ -1,3 +1,44 @@
+{
+    "name_of_procedure": [
+        {
+            "name": "Lumbar Epidural",
+            "synonyms": ["708911002","Insertion of temporary catheter into lumbar epidural space (procedure)", "Epidural for Labour"]
+
+        },
+
+        {
+            "name": "CSE",
+            "synonyms": ["231261002", "Combined spinal/epidural local anesthetic block (procedure)","Combined Spinal Epidural"]
+
+        },
+        {
+            "name": "Spinal",
+            "synonyms": ["231261002", "Combined spinal/epidural local anesthetic block (procedure)","Combined Spinal Epidural"]
+
+        },
+    ]
+
+    "Indication": [
+        {
+            "name": "Lumbar Epidural",
+            "synonyms": ["708911002","Insertion of temporary catheter into lumbar epidural space (procedure)", "Epidural for Labour"]
+
+        },
+
+        {
+            "name": "CSE",
+            "synonyms": ["231261002", "Combined spinal/epidural local anesthetic block (procedure)","Combined Spinal Epidural"]
+
+        },
+        {
+            "name": "Spinal",
+            "synonyms": ["231261002", "Combined spinal/epidural local anesthetic block (procedure)","Combined Spinal Epidural"]
+
+        },
+    ]
+}
+
+
 Procedures:
 
 Lumbar Epidural:
@@ -17,6 +58,12 @@ GA:
 
 ENTONOX:
 271419000 |Gas and air analgesia in labor (procedure)|
+
+Blood Patch:
+
+
+
+
 
 Indications:
 

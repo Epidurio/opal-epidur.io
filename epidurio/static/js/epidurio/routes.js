@@ -5,12 +5,12 @@
   app.config(
       ['$routeProvider',
        function($routeProvider){
-  //	     $routeProvider.when('/',  {redirectTo: '/list'})
+           $routeProvider.when('/',  {redirectTo: '/list/labour'})
 
-           $routeProvider.when('/',  {
-               controller: 'WelcomeCtrl',
-               templateUrl: '/templates/welcome.html'}
-                              )
+           // $routeProvider.when('/',  {
+           //     controller: 'WelcomeCtrl',
+           //     templateUrl: '/templates/welcome.html'}
+           //                    )
 
        }]);
 })();

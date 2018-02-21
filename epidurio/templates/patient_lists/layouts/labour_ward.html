@@ -1,0 +1,42 @@
+{% load forms %}
+{% load labourward %}
+<div class="container content-offset">
+  <div class="panel panel-primary panel-container">
+    <div class="panel-heading patient-list-header">
+      <h2>
+        {% block list_header %}
+          {{ patient_list.display_name }}
+        {% endblock %}
+      </h2>
+    </div>
+  </div> <!-- panel-primary -->
+  <div class="panel-body">
+    <div class="row">
+      {% ward_card "1" %}
+      {% ward_card "2" %}
+      {% ward_card "3" %}
+      {% ward_card "4" %}
+    </div>
+    <div class="row">
+      {% ward_card "5" %}
+      {% ward_card "6" %}
+      {% ward_card "7" %}
+      {% ward_card "8" %}
+    </div>
+    <div class="row">
+
+      {% ward_card "9" %}
+      {% ward_card "10" %}
+      {% ward_card "11" %}
+      {% ward_card "12" %}
+    </div>
+    <div class="row">
+
+      {% ward_card "Recovery 1" %}
+      {% ward_card "Recovery 2" %}
+      {% ward_card "Recovery 3" %}
+      {% ward_card "Recovery 4" %}
+
+    </div>
+  </div>
+</div>

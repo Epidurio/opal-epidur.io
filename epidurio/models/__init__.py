@@ -1,5 +1,6 @@
-from .epidural_insertion import EpiduralInsertion
+from .epidural_insertion import EpiduralInsertion, Asepsis, Consent, Technique, NeuroaxialDrugs, ProcedureNotes
 from .epidural_request import EpiduralRequest
+from .epidural_follow_up import EpiduralFollowUp, SatisfactionRating
 
 from opal import models
 
@@ -24,4 +25,14 @@ class PatientConsultation(models.PatientConsultation): pass
 __all__ = [
     'EpiduralInsertion',
     'EpiduralRequest',
+    'EpiduralFollowUp',
+    'SatisfactionRating',
+    'Asepsis',
+    'Consent',
+    'Technique',
+    'NeuroaxialDrugs',
+    'ProcedureNotes',
+
+
+
 ]
