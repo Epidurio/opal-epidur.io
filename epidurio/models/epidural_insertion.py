@@ -41,7 +41,7 @@ class EpiduralInsertion(models.EpisodeSubrecord):
     )
 
 
-    insertion_record = ForeignKeyOrFreeText(
+    procedure = ForeignKeyOrFreeText(
         ProcedureType,
         help_text="Free text clinical record of the intervention"
     )
