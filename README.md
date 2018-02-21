@@ -1,3 +1,6 @@
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/Epidurio/epidur.io.svg?columns=all)](https://waffle.io/Epidurio/epidur.io)
+
+
 # opal-epidur.io
 Port of epidur.io using the [Opal](https://github.com/openhealthcare/opal) healthcare application framework
 
