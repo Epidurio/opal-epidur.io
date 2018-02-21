@@ -1,8 +1,14 @@
 {% load forms %}
 {% textarea field="EpiduralRequest.history" %}
-{% checkbox field="EpiduralRequest.cannula_in_situ" %}
-{% checkbox field="EpiduralRequest.anticoagulants" %}
-{% checkbox field="EpiduralRequest.pyrexia" %}
-{% checkbox field="EpiduralRequest.hypertension" %}
+<div class="row">
+  <div class="col-md-4 col-md-offset-2">
+    {% checkbox field="EpiduralRequest.cannula_in_situ" %}
+    {% checkbox field="EpiduralRequest.anticoagulants" %}
+  </div>
+  <div class="col-md-4">
+    {% checkbox field="EpiduralRequest.pyrexia" %}
+    {% checkbox field="EpiduralRequest.hypertension" %}
+  </div>
+</div>
 {% input field="EpiduralRequest.platelet_count" %}
 {% datetimepicker field="EpiduralRequest.request_date_time" %}
