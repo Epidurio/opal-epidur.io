@@ -42,10 +42,10 @@ class EpiduralInsertion(models.EpisodeSubrecord):
     )
 
 
-    #procedure = ForeignKeyOrFreeText(
-        #ProcedureType,
-        #help_text="Free text clinical record of the intervention"
-    #)
+    procedure = ForeignKeyOrFreeText(
+        ProcedureType,
+        help_text="Free text clinical record of the intervention"
+    )
 
 
     # TODO should ideally be SNOMEDized
