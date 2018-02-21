@@ -7,6 +7,7 @@ from opal.core import application, menus
 class Application(application.OpalApplication):
     javascripts   = [
         'js/epidurio/routes.js',
+        'js/epidurio/directives.js',
         'js/opal/controllers/discharge.js',
         'js/epidurio/epidural_insertion_ctrl.js',
         'js/epidurio/epidural_request_ctrl.js',
