@@ -2,6 +2,15 @@
 {% datetimepicker field="EpiduralInsertion.insertion_date_time" %}
 {% input field="EpiduralInsertion.performed_by" %}
 {% input field="EpiduralInsertion.supervised_by" %}
+
 {% select field="EpiduralInsertion.procedure" %}
-{% select field="EpiduralInsertion.indication" %}
+  <span ng-show="editing.epidural_insertion.procedure === 'Epidural'">
+    {% select field="EpiduralInsertion.indication" lookuplist="['Labour']" %}
+  </span>
+
+  <span ng-show="editing.epidural_insertion.procedure !== 'Epidural'">
+    {% select field="EpiduralInsertion.indication" lookuplist="indication_list" %}
+  </span>
+
+
 {% radio field="EpiduralInsertion.cervical_dilation" %}
