@@ -21,6 +21,7 @@
               <div ng-hide="row.epidural_request[0].request_date_time">
                 <a class="btn btn-secondary pull-right"
                 pathway-episode="row"
+                pathway-callback="refresh(row.id)"
                 open-pathway="request_epidural">
                 {% icon 'fa-plus-circle' %} Request Epidural
               </a>
