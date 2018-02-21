@@ -26,10 +26,19 @@
                 {% icon 'fa-plus-circle' %} Request Epidural
               </a>
             </div>
-            <div ng-show="row.epidural_request[0].request_date_time">
+            <!-- Epidural already requested -->
+            <!-- TODO: this conditional should eventually change to use epidural_status rather than this complex logic-->
+            <div ng-show="row.epidural_request[0].request_date_time && !row.epidural_insertion[0].insertion_date_time">
               <div class="btn btn-secondary pull-right disabled">
                 Epidural Requested
                 [[ row.epidural_request[0].request_date_time | shortDateTime ]]
+              </div>
+            </div>
+            <!-- Epidural Inserted -->
+            <div ng-show="row.epidural_insertion[0].insertion_date_time">
+              <div class="btn btn-success pull-right disabled">
+                Epidural In Situ
+                [[ row.epidural_insertion[0].insertion_date_time | shortDateTime ]]
               </div>
             </div>
           <!-- removed from after ln 24 to prevent removal from list pathway-callback="removeFromList(row.id)"-->
