@@ -251,16 +251,16 @@ class ProcedureNotes(models.EpisodeSubrecord):
         ('None', 'None',),
         ('Spinal Needle', 'Spinal Needle',),
         ('Tuohy Needle', 'Tuohy Needle',),
-        ('Epidural Catheter', 'Epidural Catheter',
+        ('Epidural Catheter', 'Epidural Catheter'),
     )
 
-    difficulty  = fields.CharField(
+    difficulty = fields.CharField(
         choices=DIFFICULTY_CHOICES,
         blank=True, null=True,
         max_length=255,
     )
 
-    paraesthesia  = fields.CharField(
+    paraesthesia = fields.CharField(
         choices=PARAESTHESIA_CHOICES,
         blank=True, null=True,
         max_length=255,
