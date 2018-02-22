@@ -1,5 +1,5 @@
 """
-epidurio - Our Opal Application
+epidurio - A Labour Epidural Management Application built with Opal Framework
 """
 from opal.core import application, menus
 
@@ -16,7 +16,9 @@ class Application(application.OpalApplication):
         # 'js/epidurio/flow.js',
     ]
 
-
+    styles = [
+        "css/epidurio.css"
+    ]
 
     @classmethod
     def get_menu_items(klass, user=None):
