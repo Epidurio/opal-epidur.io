@@ -1,0 +1,76 @@
+/*
+epidurio current colour scheme reference
+
+dark blue #25408F
+dark blue (darker variant for hover) #2E3855
+light blue #0084FF
+grey #EEEEEE
+
+*/
+
+body {
+  /*main text style*/
+  font-family: 'Franklin Gothic Book', Arial;
+  /*background: #e7ebee;*/
+  height: calc(100% - 50px);
+}
+
+.bg-primary {
+  background-color: #25408F; }
+
+.bg-secondary {
+  background-color: #0084FF; }
+
+/*border around panels*/
+.panel.panel-primary {
+  border-color: #0091C9; }
+
+.panel.panel-primary > .panel-heading {
+  background-color: #0091C9;
+  color: white;
+  border-color: #0091C9; }
+
+h5 {
+  font-weight: 600;
+  /*text-transform: capitalize;*/
+  font-size: 14px; }
+
+.btn-primary {
+  background-color: #0084FF;
+  border-color: #0084FF; }
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #2E3855;
+  border-color: #2E3855; }
+
+.btn-secondary {
+  background-color: #25408F;
+  border-color: #25408F; }
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: #864200;
+  border-color: #864200; }
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: #25408F; }
+
+.navbar-nav li:hover,
+.navbar-nav li:hover a,
+.navbar-nav li.active a,
+.navbar-nav li.active {
+  background: #cbc9c8; }
+
+.panel-primary .panel-default .panel-heading,
+.panel-default .panel-heading {
+  border-bottom: 3px solid #25408F; }
+
+.modal-header {
+  background: #2E3855; }
+
+/*.loading {
+  background-color: #343637;
+  color: white; }*/
