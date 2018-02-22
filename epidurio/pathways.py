@@ -22,10 +22,6 @@ class RequestEpiduralPathway(pathway.PagePathway):
             [patient_lists.EpiduralRequestsList.tag, patient_lists.LabourWardList.tag], user
         )
 
-
-
-
-
         return patient, episode
 
 
@@ -41,10 +37,8 @@ class RecordEpiduralPathway(pathway.PagePathway):
         models.Consent,
         models.Asepsis,
         models.Technique,
-        models.NeuroaxialDrugs,
+        models.NeuraxialDrugs,
         models.ProcedureNotes,
-
-
     )
 
     def save(self, data, user=None, episode=None, patient=None):

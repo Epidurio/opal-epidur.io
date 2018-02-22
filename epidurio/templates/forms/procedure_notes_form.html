@@ -1,5 +1,19 @@
 {% load forms %}
 {% radio field="ProcedureNotes.difficulty" %}
-{% radio field="ProcedureNotes.parasthesia" %}
-{% radio field="ProcedureNotes.complications" %}
+{% radio field="ProcedureNotes.paraesthesia" %}
+<hr>
+<div class="row">
+  <div class="col-md-4">
+    {% checkbox field="ProcedureNotes.complication_blood_in_catheter" label="Blood in catheter" %}
+    {% checkbox field="ProcedureNotes.complication_dural_puncture" label="Dural puncture" %}
+  </div>
+  <div class="col-md-4">
+    {% checkbox field="ProcedureNotes.complication_bony_obstruction" label="Bony obstruction" %}
+    {% checkbox field="ProcedureNotes.complication_morethanone_interspace" label=">1 Interspace" %}
+  </div>
+  <div class="col-md-4">
+    {% checkbox field="ProcedureNotes.complication_csf_aspirated" label="CSF aspirated" %}
+  </div>
+</div>
+<hr>
 {% textarea field="ProcedureNotes.notes" %}
