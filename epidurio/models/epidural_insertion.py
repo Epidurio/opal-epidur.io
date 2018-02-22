@@ -75,11 +75,10 @@ class Consent(models.EpisodeSubrecord):
     delayed_second_stage = fields.BooleanField(default=True)
     instrumental_delivery = fields.BooleanField(default=True)
     headache = fields.BooleanField(default=True)
-    temporary_nerve_damage  = fields.BooleanField(default=True)
+    temporary_nerve_damage = fields.BooleanField(default=True)
     permanent_nerve_damage = fields.BooleanField(default=True)
     severe_complication = fields.BooleanField(default=True)
     other = fields.TextField(null=True)
-
 
 
 class Asepsis(models.EpisodeSubrecord):
@@ -92,48 +91,54 @@ class Asepsis(models.EpisodeSubrecord):
     drape = fields.BooleanField(default=True)
     chlorhex = fields.BooleanField(default=True)
 
+
 class Technique(models.EpisodeSubrecord):
     _is_singleton = True
 
     POSITION_CHOICES = (
-    ('Sitting', 'Sitting',),
-    ('Lateral', 'Lateral',),
-)
+        ('Sitting', 'Sitting',),
+        ('Lateral', 'Lateral',),
+    )
     LEVEL_CHOICES = (
-    ('L2/3', 'L2/3',),
-    ('L3/4', 'L3/4',),
-    ('L4/5', 'L4/5',),
-    ('Other', 'Other',),
-)
+        ('L2/3', 'L2/3',),
+        ('L3/4', 'L3/4',),
+        ('L4/5', 'L4/5',),
+        ('Other', 'Other',),
+    )
 
     APPROACH_CHOICES = (
-    ('Midline', 'Midline',),
-    ('Paramedian', 'Paramedian',),
-)
+        ('Midline', 'Midline',),
+        ('Paramedian', 'Paramedian',),
+    )
 
     TUOHY_NEEDLE_CHOICES = (
-    ('16G', '16G',),
-    ('18G', '18G',),
-)
-    SPINAL_NEEDLE_CHOICES = (
-    ('26G', '26G',),
-    ('27G', '27G',),
-)
-    LOR_CHOICES = (
-    ('Saline', 'Saline',),
-    ('Air', 'Air',),
-)
-    CATHETER_IN_EPIDURAL_SPACE_CHOICES = (
-    ('2 cm', '2 cm',),
-    ('3 cm', '3 cm',),
-    ('4 cm', '4 cm',),
-    ('5 cm', '5 cm',),
-    ('6 cm', '6 cm',),
-)
-    LIDOCAINE_CHOICES = (
-    ('1 %', '1 %',),
-    ('2 %', '2 %',),
+        ('16G', '16G',),
+        ('18G', '18G',),
     )
+
+    SPINAL_NEEDLE_CHOICES = (
+        ('26G', '26G',),
+        ('27G', '27G',),
+    )
+
+    LOR_CHOICES = (
+        ('Saline', 'Saline',),
+        ('Air', 'Air',),
+    )
+
+    CATHETER_IN_EPIDURAL_SPACE_CHOICES = (
+        ('2 cm', '2 cm',),
+        ('3 cm', '3 cm',),
+        ('4 cm', '4 cm',),
+        ('5 cm', '5 cm',),
+        ('6 cm', '6 cm',),
+    )
+
+    LIDOCAINE_CHOICES = (
+        ('1 %', '1 %',),
+        ('2 %', '2 %',),
+    )
+
     patient_position  = fields.CharField(
         choices=POSITION_CHOICES,
         blank=True, null=True,
@@ -160,7 +165,6 @@ class Technique(models.EpisodeSubrecord):
 
     lidocaine_volume = fields.PositiveIntegerField(
         default=3,
-
     )
 
     tuohy_needle_choices = fields.CharField(
@@ -181,12 +185,12 @@ class Technique(models.EpisodeSubrecord):
         max_length=255,
     )
 
-    depth_of_epidural_space= fields.PositiveIntegerField(
+    depth_of_epidural_space = fields.PositiveIntegerField(
         default=3,
 
     )
-
-    catheter_length_in_epidural_space = fields.CharField(
+fields
+    default=Falsecatheter_length_in_epidural_space = fields.CharField(
         choices=CATHETER_IN_EPIDURAL_SPACE_CHOICES,
         blank=True, null=True,
         max_length=255,
@@ -196,53 +200,40 @@ class Technique(models.EpisodeSubrecord):
 class NeuroaxialDrugs(models.EpisodeSubrecord):
     _is_singleton = True
 
-
-
-
     spinal_opiate = ForeignKeyOrFreeText(
         SpinalOpiate,
-
     )
+
     spinal_opiate_dose = fields.PositiveIntegerField(
         null=True,
         blank=True,
-
-
     )
-
 
     local_anaesthetic_spinal = ForeignKeyOrFreeText(
         SpinalLocal,
-
     )
 
     spinal_local_anaesthetic_volume = fields.PositiveIntegerField(
         null=True,
         blank=True,
-
     )
 
     epidural_opiate = ForeignKeyOrFreeText(
         EpiduralOpiate,
-
     )
+
     epidural_opiate_dose = fields.PositiveIntegerField(
         null=True,
         blank=True,
-
     )
-
 
     local_anaesthetic_epidural = ForeignKeyOrFreeText(
         EpiduralLocal,
-
     )
 
     epidural_local_anaesthetic_volume = fields.PositiveIntegerField(
         null=True,
         blank=True,
-
-
     )
 
 
@@ -250,28 +241,17 @@ class ProcedureNotes(models.EpisodeSubrecord):
     _is_singleton = True
 
     DIFFICULTY_CHOICES = (
-    ('Straightforward', 'Straightforward',),
-    ('Moderately Difficult', 'Moderately Difficult',),
-    ('Difficult', 'Difficult',),
-)
+        ('Straightforward', 'Straightforward',),
+        ('Moderately Difficult', 'Moderately Difficult',),
+        ('Difficult', 'Difficult',),
+    )
 
-    PARASTHESIA_CHOICES = (
-    ('None', 'None',),
-    ('Spinal Needle', 'Spinal Needle',),
-    ('Tuohy Needle', 'Tuohy Needle',),
-    ('Epidural Catheter', 'Epidural Catheter',),
-)
-    COMPLICATION_CHOICES = (
-    ('None', 'None',),
-    ('Blood in catheter', 'Blood in catheter',),
-    ('Dural Puncture', 'Dural Puncture',),
-    ('CSF aspirated', 'CSF aspirated',),
-    ('Bony Obstruction', 'Bony Obstruction',),
-    ('>1 interspace', '>1 interspace',),
-
-)
-
-
+    PARAESTHESIA_CHOICES = (
+        ('None', 'None',),
+        ('Spinal Needle', 'Spinal Needle',),
+        ('Tuohy Needle', 'Tuohy Needle',),
+        ('Epidural Catheter', 'Epidural Catheter',
+    )
 
     difficulty  = fields.CharField(
         choices=DIFFICULTY_CHOICES,
@@ -279,20 +259,21 @@ class ProcedureNotes(models.EpisodeSubrecord):
         max_length=255,
     )
 
-    parasthesia  = fields.CharField(
-        choices=PARASTHESIA_CHOICES,
+    paraesthesia  = fields.CharField(
+        choices=PARAESTHESIA_CHOICES,
         blank=True, null=True,
         max_length=255,
     )
-    complications  = fields.CharField(
-        choices=COMPLICATION_CHOICES,
-        blank=True, null=True,
-        max_length=255,
-    )
+
+    complication_blood_in_catheter = fields.BooleanField(default=False)
+    complication_dural_puncture = fields.BooleanField(default=False)
+    complication_csf_aspirated = fields.BooleanField(default=False)
+    complication_bony_obstruction = fields.BooleanField(default=False)
+    complication_morethanone_interspace = fields.BooleanField(default=False)
 
     notes = fields.TextField(
         null=True,
-
+        blank=True,
     )
 
     # NOTE: patient_id is handled because of EpisodeSubrecord inheritance
