@@ -1,3 +1,4 @@
+![Supported By The Apperta Foundation](https://github.com/AppertaFoundation/apperta-image-assets/blob/master/supported_by_apperta_lores.png)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/Epidurio/epidur.io.svg?columns=all)](https://waffle.io/Epidurio/epidur.io)
 
 
