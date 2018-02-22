@@ -34,13 +34,13 @@ class EpiduralInsertion(models.EpisodeSubrecord):
         blank=True,
 
     )
+
     #pick from list of anaesthetist users
     supervised_by = fields.TextField(
         null=True,
         blank=True,
 
     )
-
 
     procedure = ForeignKeyOrFreeText(
         ProcedureType,
@@ -189,15 +189,16 @@ class Technique(models.EpisodeSubrecord):
         default=3,
 
     )
-fields
-    default=Falsecatheter_length_in_epidural_space = fields.CharField(
+
+    catheter_length_in_epidural_space = fields.CharField(
         choices=CATHETER_IN_EPIDURAL_SPACE_CHOICES,
         blank=True, null=True,
         max_length=255,
         default=3,
     )
 
-class NeuroaxialDrugs(models.EpisodeSubrecord):
+
+class NeuraxialDrugs(models.EpisodeSubrecord):
     _is_singleton = True
 
     spinal_opiate = ForeignKeyOrFreeText(
