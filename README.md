@@ -7,6 +7,8 @@ Port of epidur.io using the [Opal](https://github.com/openhealthcare/opal) healt
 ### Developing Epidur.io
 (with notes for the errant Rubyist and indication of what is Python, what is Django, and what is Opal)
 
+**Prerequisites:** you should have [Python 3](https://www.python.org/downloads/) and [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/install.html) installed on your machine.
+
 * clone the sources locally
 
 `git clone https://github.com/Epidurio/opal-epidur.io epidurio/`
