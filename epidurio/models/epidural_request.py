@@ -72,7 +72,7 @@ class Progress(models.EpisodeSubrecord):
     _is_singleton = True
 
     cervical_dilation = fields.PositiveIntegerField(
-
+        null=True,
     )
 
     synto_infusion = fields.BooleanField(
