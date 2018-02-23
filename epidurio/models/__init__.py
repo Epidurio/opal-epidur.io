@@ -6,7 +6,12 @@ from .epidural_insertion import (
     NeuraxialDrugs,
     ProcedureNotes
     )
-from .epidural_request import EpiduralRequest
+from .epidural_request import (
+    EpiduralRequest,
+    Pregnancy,
+    Progress,
+    Preparation,
+    )
 from .epidural_follow_up import EpiduralFollowUp, SatisfactionRating
 
 from opal import models
@@ -39,4 +44,7 @@ __all__ = [
     'Technique',
     'NeuraxialDrugs',
     'ProcedureNotes',
+    'Pregnancy',
+    'Progress',
+    'Preparation',
 ]

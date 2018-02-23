@@ -16,12 +16,6 @@ class EpiduralLocal(lookuplists.LookupList): pass
 class EpiduralInsertion(models.EpisodeSubrecord):
     _is_singleton = True
 
-    CERVIX_CHOICES = (
-    ('<2 cm', '<2 cm',),
-    ('3-5 cm', '3-5 cm',),
-    ('> 6 cm', '> 6 cm',),
-)
-
     insertion_date_time = fields.DateTimeField(
         null=True,
         # default=timezone.now,  (causes an Opal APIerror if uncommented)
@@ -53,14 +47,6 @@ class EpiduralInsertion(models.EpisodeSubrecord):
         Indication,
         help_text="Description of the indication",
     )
-
-
-    cervical_dilation  = fields.CharField(
-        choices=CERVIX_CHOICES,
-        blank=True, null=True,
-        max_length=255,
-    )
-
 
 class Consent(models.EpisodeSubrecord):
     _is_singleton = True
