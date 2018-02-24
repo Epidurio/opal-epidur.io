@@ -71,6 +71,6 @@ h5 {
 .modal-header {
   background: #2E3855; }
 
-/*.loading {
-  background-color: #343637;
-  color: white; }*/
+.loading {
+  background-color: #e7ebee;
+}
