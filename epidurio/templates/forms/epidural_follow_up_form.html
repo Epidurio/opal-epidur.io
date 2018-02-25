@@ -1,16 +1,24 @@
 {% load forms %}
 {% datetimepicker field="EpiduralFollowUp.time_of_follow_up" %}
+{% input field="EpiduralFollowUp.performed_by" %}
 <div class="row">
   <div class="col-md-4">
+    {% checkbox field="EpiduralFollowUp.home_before_follow_up" %}
     {% checkbox field="EpiduralFollowUp.headache" %}
     {% checkbox field="EpiduralFollowUp.has_not_mobilised" %}
   </div>
   <div class="col-md-4">
     {% checkbox field="EpiduralFollowUp.weakness" %}
     {% checkbox field="EpiduralFollowUp.sensory_disturbance" %}
+    {% checkbox field="EpiduralFollowUp.itu_admission" %}
   </div>
   <div class="col-md-4">
     {% checkbox field="EpiduralFollowUp.back_pain" %}
     {% checkbox field="EpiduralFollowUp.has_not_passed_urine" %}
+    {% checkbox field="EpiduralFollowUp.general_anaesthesia" %}
   </div>
+
 </div>
+
+{% textarea field="EpiduralFollowUp.other" %}
+{% checkbox field="EpiduralFollowUp.post_natal_appointment_required" %}
