@@ -1,11 +1,17 @@
 {% load forms %}
-{% radio field="Technique.patient_position" %}
-{% radio field="Technique.level" %}
-{% radio field="Technique.approach" %}
-{% radio field="Technique.lidocaine" %}
-{% input field="Technique.lidocaine_volume" unit="ml" %}
-{% radio field="Technique.tuohy_needle_choices" %}
-{% radio field="Technique.spinal_needle_choices" %}
-{% radio field="Technique.loss_of_resistance" %}
-{% input field="Technique.depth_of_epidural_space" unit="cm" %}
-{% radio field="Technique.catheter_length_in_epidural_space" %}
+  {% radio field="Technique.patient_position" %}
+  {% radio field="Technique.level" %}
+  {% radio field="Technique.approach" %}
+  {% radio field="Technique.lidocaine" %}
+  {% input field="Technique.lidocaine_volume" unit="ml" %}
+<span ng-show="editing.epidural_insertion.procedure !== 'Spinal'">
+  {% radio field="Technique.tuohy_needle_choices" %}
+</span>
+<span ng-show="editing.epidural_insertion.procedure !== 'Epidural'">
+  {% radio field="Technique.spinal_needle_choices" %}
+</span>
+<span ng-show="editing.epidural_insertion.procedure !== 'Spinal'">
+  {% radio field="Technique.loss_of_resistance" %}
+  {% input field="Technique.depth_of_epidural_space" unit="cm" %}
+  {% radio field="Technique.catheter_length_in_epidural_space" %}
+</span>
