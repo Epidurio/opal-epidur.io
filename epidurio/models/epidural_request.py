@@ -63,7 +63,7 @@ class Pregnancy(models.EpisodeSubrecord):
 
     history = fields.TextField(
         null=True,
-        help_text="Focused summary of the relevant history. Use this area to let the amaesthetist know about any relevant hazards ar special circumstances",
+        help_text="Focused summary of the relevant history. Use this area to let the anaesthetist know about any relevant hazards or special circumstances",
     )
 
 
@@ -73,10 +73,12 @@ class Progress(models.EpisodeSubrecord):
 
     cervical_dilation = fields.PositiveIntegerField(
         null=True,
+        help_text="Cervical dilatation as at last examination",
     )
 
     synto_infusion = fields.BooleanField(
-        default=False
+        default=False,
+        help_text="Syntocinon infusion?",
     )
 
 
