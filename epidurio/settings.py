@@ -267,12 +267,14 @@ INTEGRATING = False
 
 CONTACT_EMAIL = []
 DEFAULT_FROM_EMAIL = 'hello@example.com'
-DEFAULT_DOMAIN = 'http://epidurio.com/'
+DEFAULT_DOMAIN = 'http://epidur.io/'
 
 # Begins OPAL Settings you should edit !
 
 OPAL_BRAND_NAME = 'epidur.io'
-VERSION_NUMBER  = '0.1.0alpha'
+VERSION_NUMBER  = '0.1.1alpha'
+OPAL_FAVICON_PATH = 'img/favicon.png'
+OPAL_LOGO_PATH = 'img/epidurio-logo-draft1-icon.png'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
