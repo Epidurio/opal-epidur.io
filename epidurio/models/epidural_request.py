@@ -3,7 +3,6 @@ from django.utils import timezone
 from opal import models
 
 
-
 class EpiduralRequest(models.EpisodeSubrecord):
     _is_singleton = True
 
@@ -19,6 +18,7 @@ class EpiduralRequest(models.EpisodeSubrecord):
         null=True,
         # default=timezone.now, (causes an Opal APIerror if uncommented)
         help_text="Date and time of the epidural request",)
+
 
 class Pregnancy(models.EpisodeSubrecord):
     _is_singleton = True
@@ -67,7 +67,6 @@ class Pregnancy(models.EpisodeSubrecord):
     )
 
 
-
 class Progress(models.EpisodeSubrecord):
     _is_singleton = True
 
@@ -80,7 +79,6 @@ class Progress(models.EpisodeSubrecord):
         default=False,
         help_text="Syntocinon infusion?",
     )
-
 
 
 class Preparation(models.EpisodeSubrecord):
