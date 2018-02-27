@@ -12,6 +12,10 @@ class RequestEpiduralPathway(pathway.PagePathway):
             model=models.EpiduralRequest,
             step_controller="EpiduralRequestCtrl"
         ),
+
+        models.Pregnancy,
+        models.Progress,
+        models.Preparation,
     )
 
     def save(self, data, user=None, episode=None, patient=None):

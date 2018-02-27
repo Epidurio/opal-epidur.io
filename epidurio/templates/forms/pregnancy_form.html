@@ -1,0 +1,17 @@
+{% load forms %}
+{% radio field="Pregnancy.parity" %}
+{% input field="Pregnancy.platelet_count" %}
+
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-2">
+    {% checkbox field="Pregnancy.low_risk" %}
+    {% checkbox field="Pregnancy.anticoagulants" %}
+  </div>
+  <div class="col-md-4">
+    {% checkbox field="Pregnancy.sepsis" %}
+    {% checkbox field="Pregnancy.hypertension" %}
+  </div>
+</div>
+
+{% textarea field="Pregnancy.history" %}

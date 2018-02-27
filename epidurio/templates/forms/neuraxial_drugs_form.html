@@ -5,8 +5,9 @@
   {% select field="NeuraxialDrugs.local_anaesthetic_spinal" %}
   {% input field="NeuraxialDrugs.spinal_local_anaesthetic_volume" unit="ml" %}
 </span>
-
-{% select field="NeuraxialDrugs.epidural_opiate" %}
-{% input field="NeuraxialDrugs.epidural_opiate_dose" unit="mg" %}
-{% select field="NeuraxialDrugs.local_anaesthetic_epidural" %}
-{% input field="NeuraxialDrugs.epidural_local_anaesthetic_volume" unit="ml" %}
+<span ng-show="editing.epidural_insertion.procedure !== 'Spinal'">
+  {% select field="NeuraxialDrugs.epidural_opiate" %}
+  {% input field="NeuraxialDrugs.epidural_opiate_dose" unit="mg" %}
+  {% select field="NeuraxialDrugs.local_anaesthetic_epidural" %}
+  {% input field="NeuraxialDrugs.epidural_local_anaesthetic_volume" unit="ml" %}
+</span>

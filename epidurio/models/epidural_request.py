@@ -14,14 +14,35 @@ class EpiduralRequest(models.EpisodeSubrecord):
         help_text="Internal field for managing the state of the epidural request - ordered, in progress, completed, attempted-failed, etc)",
     )
 
-    history = fields.TextField(
+    request_date_time = fields.DateTimeField(
         null=True,
-        help_text="Focused summary of the relevant history. Use this area to let the amaesthetist know about any relevant hazards ar special circumstances",
+        # default=timezone.now, (causes an Opal APIerror if uncommented)
+        help_text="Date and time of the epidural request",)
+
+
+class Pregnancy(models.EpisodeSubrecord):
+    _is_singleton = True
+
+    PARITY_CHOICES = (
+    ('Primiparous', 'Primiparous',),
+    ('Multiparous', 'Multiparous',),
     )
 
-    cannula_in_situ = fields.BooleanField(
-        help_text="Does the patient have a peripheral venous cannula in situ?",
+    parity = fields.CharField(
+        choices=PARITY_CHOICES,
+        blank=True, null=True,
+        max_length=255,
+    )
+
+
+    low_risk = fields.BooleanField(
         default=False
+    )
+
+    platelet_count = fields.CharField(
+        null=True,
+        max_length=20,
+        help_text="Patient's latest Platelet count",
     )
 
     anticoagulants = fields.BooleanField(
@@ -29,28 +50,43 @@ class EpiduralRequest(models.EpisodeSubrecord):
         default=False
     )
 
-    pyrexia = fields.BooleanField(
-        help_text="Does the patient have a recent history of pyrexia?",
-        default=False
-        # TODO definition of pyrexia should be explicitly stated (temp, duration, what is 'recent' etc)
-    )
-
     hypertension = fields.BooleanField(
         help_text="Does the patient have pregnancy-induced hypertension (PIH)?",
         default=False
     )
 
-    # TODO this field could be autopopulated from the lab, also needs a timestamp to give meaning to 'latest'
-    platelet_count = fields.CharField(
-        null=True,
-        max_length=20,
-        help_text="Patient's latest Platelet count",
+    sepsis = fields.BooleanField(
+        help_text="Does the patient have signs of maternal sepsis?",
+        default=False
+        # TODO definition of pyrexia should be explicitly stated (temp, duration, what is 'recent' etc)
     )
 
-    request_date_time = fields.DateTimeField(
+    history = fields.TextField(
         null=True,
-        # default=timezone.now, (causes an Opal APIerror if uncommented)
-        help_text="Date and time of the epidural request",)
+        help_text="Focused summary of the relevant history. Use this area to let the anaesthetist know about any relevant hazards or special circumstances",
+    )
 
+
+class Progress(models.EpisodeSubrecord):
+    _is_singleton = True
+
+    cervical_dilation = fields.PositiveIntegerField(
+        null=True,
+        help_text="Cervical dilatation as at last examination",
+    )
+
+    synto_infusion = fields.BooleanField(
+        default=False,
+        help_text="Syntocinon infusion?",
+    )
+
+
+class Preparation(models.EpisodeSubrecord):
+    _is_singleton = True
+
+    cannula_in_situ = fields.BooleanField(
+        help_text="Does the patient have a peripheral venous cannula in situ?",
+        default=False
+    )
     # NOTE: patient_id is handled because of EpisodeSubrecord inheritance
     # NOTE: created_at, updated_at and user_id are handled because of TrackedModel inheritance
