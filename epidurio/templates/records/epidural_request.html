@@ -1,1 +1,4 @@
-Requested: [[ item.request_date_time | shortDate ]](<span minutes-since="item.request_date_time"></span>)<br />
+<span ng-show="item.request_date_time">
+  Requested: [[ item.request_date_time | shortDate ]]
+  (<span minutes-since="item.request_date_time"></span>)
+</span>
