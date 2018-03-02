@@ -35,7 +35,9 @@ except ImportError:
 ALLOWED_HOSTS = [
     'localhost',
     '.herokuapp.com',
-    '127.0.0.1'
+    '127.0.0.1',
+    'epidur.io',
+
 ]
 
 # Local time zone for this installation. Choices can be found here:
