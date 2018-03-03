@@ -45,13 +45,13 @@ h5 {
   border-color: #2E3855; }
 
 .btn-secondary {
-  background-color: #25408F;
-  border-color: #25408F; }
+  background-color: #0084FF;
+  border-color: #0084FF; }
 
 .btn-secondary:hover,
 .btn-secondary:focus {
-  background-color: #864200;
-  border-color: #864200; }
+  background-color: #2E3855;
+  border-color: #2E3855; }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
