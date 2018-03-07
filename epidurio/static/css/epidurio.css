@@ -23,12 +23,12 @@ body {
 
 /*border around panels*/
 .panel.panel-primary {
-  border-color: #0091C9; }
+  border-color: #0084FF; }
 
 .panel.panel-primary > .panel-heading {
-  background-color: #0091C9;
+  background-color: #0084FF;
   color: white;
-  border-color: #0091C9; }
+  border-color: #0084FF; }
 
 h5 {
   font-weight: 600;
