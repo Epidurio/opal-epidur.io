@@ -59,3 +59,5 @@ http://opal.openhealthcare.org.uk/docs/guides/deployment/
 * to create seed data with patients and locations in Labour Ward:
 
 `python manage.py create_dev_labour_ward`
+
+This software is Copyright (c) 2018 Tim Knowles
