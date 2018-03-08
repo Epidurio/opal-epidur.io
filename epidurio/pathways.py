@@ -2,6 +2,11 @@ from opal.core import pathway
 from epidurio import models
 from epidurio import patient_lists
 
+class SearchPatientPathway(pathway.PagePathway):
+    display_name = "search"
+    steps = (
+
+    )
 
 class RequestEpiduralPathway(pathway.PagePathway):
     display_name = "Request Epidural"

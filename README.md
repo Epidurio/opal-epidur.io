@@ -46,9 +46,14 @@ Port of epidur.io using the [Opal](https://github.com/openhealthcare/opal) healt
 
 `python manage.py runserver`
 
-* navigate to the application in a browser
+* navigate to the application in a browser, usually it is at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 * check out Admin interface at /admin
+
+
+### FHIR integration
+* Epidur.io uses [fhirclient](https://github.com/smart-on-fhir/client-py) to integrate with FHIR endpoints for obtaining demographic data about new patients
+* The file `utils/fhir_demographics_importer.py` contains the importer code
 
 
 ### Deploying your new Opal application to Heroku for testing/demo

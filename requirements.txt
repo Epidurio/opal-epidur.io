@@ -19,3 +19,8 @@ celery==3.1.19
 
 # Open Health Care repositories on GitHub
 -e git+https://github.com/openhealthcare/opal.git@v0.10.0#egg=opal
+
+# FHIR client
+# for the Cerner FHIR Server, which is DSTU2 (an older version), the
+# fhirclient version needs to be pinned at 1.0.x
+fhirclient==1.0.3
