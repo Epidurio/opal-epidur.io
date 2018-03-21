@@ -1,57 +1,62 @@
 from opal.core.api import OPALRouter
 from opal.core.api import LoginRequiredViewset
 from opal.core.views import json_response
-
-from fhirclient import client
-import fhirclient.models.patient as p
-import fhirclient.models.humanname as hn
+from opal.core import exceptions
+import requests
 
 
-class CernerFhirServerSearch(LoginRequiredViewset):
-    base_name = "fhirsearch"
+class FhirServerSearchViewSet(LoginRequiredViewset):
+    base_name = r'search'
 
-    # API_BASES = {
-    # 'cerner-open': 'https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/',
-    # 'smart-open': 'https://sb-fhir-dstu2.smarthealthit.org/api/smartdstu2/open/'
-    # }
+    API_DETAILS = {
+        'cerner_open': {
+            'api_base_url':        'https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/',
+            'ident_token_prefix':  'urn:oid:2.2.2.2.2.2'
+        },
+        'smart_open': {
+            'api_base_url':        'https://sb-fhir-dstu2.smarthealthit.org/api/smartdstu2/open/',
+            'ident_token_prefix':  ''
+        }
+    }
+
+    def list(self, request): return json_response('hi')
 
     def retrieve(self, request, *args, **kwargs):
-        return json_response({"ping":"PONG"})
+        patient = self.get_data_from_fhir_server(kwargs['pk'])
+        if patient['total'] == 1:
+            demographics = patient['entry'][0]['resource']
+            opal_demographics = {
+                'hospital_number': demographics['identifier'][0]['value'],
+                'nhs_number': 'NHS number not available',
+                'first_name': " ".join(demographics['name'][0]['given']),  # sorry but syntax like "str".join(list) is why Python sucks
+                'surname': " ".join(demographics['name'][0]['family']),    # list.join("str") is much less weird for normal people
+                'date_of_birth': demographics['gender'],
+                'ethnicity': 'Ethnicity placeholder',
+                'birth_place': 'Birth Place placeholder',
+            }
+            return json_response(opal_demographics)
 
-    # def search_server_by_cerner_mrn(cerner_mrn):
-    #     # a cerner MRN identifier token urn:oid:2.2.2.2.2.2|412579456
-    #     client = setup()
-    #     search = p.Patient.where(struct={'identifier': cerner_mrn})
-    #     patients = search.perform_resources(client.server)
-    #
-    #     # returns an array of matching patients (hopefully just one unless they've reused the same identifier twice)
-    #     return patients
-    #
-    # def get_patient_demographics(cerner_mrn):
-    #     patient = search_server_by_cerner_mrn(cerner_mrn)[0] # there should only be ONE
-    #     print(patient.as_json())
-    #     demographics = {
-    #     'hospital_number': '',
-    #     'nhs_number': 'NHS number placeholder',
-    #     'first_name': patient.name[0].family,  # TODO: handle case of more than one name.family
-    #     'surname': patient.name[0].given,  # TODO: handle case of more than one name.given
-    #     'date_of_birth': patient.birthDate.date,
-    #     'sex': patient.gender,
-    #     'ethnicity': 'Ethnicity placeholder',
-    #     'birth_place': 'Birth Place placeholder',
-    #     }
-    #     print(demographics)
-    #
-    #
-    # def setup():
-    #     client_instance = client.FHIRClient(
-    #         settings={
-    #         'app_id': 'epidurio',
-    #         'api_base': API_BASES['cerner-open'],
-    #         }
-    #     )
-    #     return client_instance
+        elif patient['total'] == 0:
+            return json_response("No patient with MRN %s was found on the FHIR server" % kwargs['pk'])
+
+        elif patient['total'] > 1:
+            return json_response("More than one patient with MRN %s was found on the FHIR server. This is unusual. And concerning." % kwargs['pk'])
+
+
+
+    def get_data_from_fhir_server(self, cerner_mrn):
+        query_type = "Patient"
+        url = self.API_DETAILS['cerner_open']['api_base_url'] + query_type
+        identifier_string = self.API_DETAILS['cerner_open']['ident_token_prefix'] + "|" + cerner_mrn
+        querystring = {"identifier": identifier_string}
+        headers = {'accept': "application/json",}
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            msg = "Error contacting external FHIR demographic API from Epidur.io"
+            raise exceptions.APIError(msg)
 
 
 epidurio_router = OPALRouter()
-epidurio_router.register(CernerFhirServerSearch.base_name, CernerFhirServerSearch)
+epidurio_router.register(FhirServerSearchViewSet.base_name, FhirServerSearchViewSet)
