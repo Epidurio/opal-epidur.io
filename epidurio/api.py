@@ -1,8 +1,9 @@
+import requests
+from django.utils.dateparse import parse_date
 from opal.core.api import OPALRouter
 from opal.core.api import LoginRequiredViewset
 from opal.core.views import json_response
 from opal.core import exceptions
-import requests
 
 
 class FhirServerSearchViewSet(LoginRequiredViewset):
@@ -19,10 +20,15 @@ class FhirServerSearchViewSet(LoginRequiredViewset):
         }
     }
 
+    PATIENT_FOUND_IN_FHIR = "patient_found_in_fhir"
+    PATIENT_NOT_FOUND = "patient_not_found"
+
     def list(self, request): return json_response('hi')
 
     def retrieve(self, request, *args, **kwargs):
         patient = self.get_data_from_fhir_server(kwargs['pk'])
+
+        #if patient is found on FHIR server and response contains 1 patient
         if patient['total'] == 1:
             demographics = patient['entry'][0]['resource']
             opal_demographics = {
@@ -30,15 +36,23 @@ class FhirServerSearchViewSet(LoginRequiredViewset):
                 'nhs_number': 'NHS number not available',
                 'first_name': " ".join(demographics['name'][0]['given']),  # sorry but syntax like "str".join(list) is why Python sucks
                 'surname': " ".join(demographics['name'][0]['family']),    # list.join("str") is much less weird for normal people
-                'date_of_birth': demographics['gender'],
+                'date_of_birth': parse_date(demographics['birthDate']),
                 'ethnicity': 'Ethnicity placeholder',
                 'birth_place': 'Birth Place placeholder',
+                'sex': demographics['gender'],
             }
-            return json_response(opal_demographics)
+            return json_response(dict(
+                patient=dict(demographics=[opal_demographics]),
+                status=self.PATIENT_FOUND_IN_FHIR),
+            )
 
+        # if patient is not found on FHIR server
         elif patient['total'] == 0:
-            return json_response("No patient with MRN %s was found on the FHIR server" % kwargs['pk'])
+            return json_response(dict(
+                status=self.PATIENT_NOT_FOUND
+            ))
 
+        # if patient is found but there is more than one patient with that MRN (should not happen)
         elif patient['total'] > 1:
             return json_response("More than one patient with MRN %s was found on the FHIR server. This is unusual. And concerning." % kwargs['pk'])
 

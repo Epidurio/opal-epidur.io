@@ -2,11 +2,20 @@ from opal.core import pathway
 from epidurio import models
 from epidurio import patient_lists
 
-class SearchPatientPathway(pathway.PagePathway):
-    display_name = "search"
-    steps = (
 
+class AddPatientPathway(pathway.PagePathway):
+    display_name = "Add a Patient"
+    slug = "add_patient"
+    steps = (
+        pathway.Step(
+            display_name='Add a Patient to Epidur.io',
+            # model=models.Demographics,
+            icon = "fa fa-female",
+            step_controller="AddPatientCtrl",
+            template = 'pathway/add-patient.html',
+        ),
     )
+
 
 class RequestEpiduralPathway(pathway.PagePathway):
     display_name = "Request Epidural"
