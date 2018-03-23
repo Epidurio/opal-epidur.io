@@ -9,11 +9,11 @@ class AddPatientPathway(pathway.PagePathway):
     steps = (
         pathway.Step(
             display_name='Add a Patient to Epidur.io',
-            # model=models.Demographics,
             icon = "fa fa-female",
             step_controller="AddPatientCtrl",
             template = 'pathway/add-patient.html',
         ),
+        models.Location,
     )
 
 
