@@ -3,6 +3,20 @@ from epidurio import models
 from epidurio import patient_lists
 
 
+class AddPatientPathway(pathway.PagePathway):
+    display_name = "Add a Patient"
+    slug = "add_patient"
+    steps = (
+        pathway.Step(
+            display_name='Add a Patient to Epidur.io',
+            icon = "fa fa-female",
+            step_controller="AddPatientCtrl",
+            template = 'pathway/add-patient.html',
+        ),
+        models.Location,
+    )
+
+
 class RequestEpiduralPathway(pathway.PagePathway):
     display_name = "Request Epidural"
     slug = "request_epidural"
