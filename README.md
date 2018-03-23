@@ -65,3 +65,6 @@ http://opal.openhealthcare.org.uk/docs/guides/deployment/
 ```python
 python manage.py create_dev_labour_ward
 ```
+
+### Copyright
+This software is Copyright (c) 2018 Tim Knowles and is released without warranty as open source software under the GNU Affero GPL (AGPL) v3 license.
