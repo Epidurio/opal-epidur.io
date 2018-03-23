@@ -290,6 +290,20 @@ REST_FRAMEWORK = {
 #     ('text/x-scss', 'sass --scss {infile} {outfile}'),
 # )
 
+##################### Begin Epidur.io Settings ###############################
+FHIR_API_DETAILS = {
+    'cerner_open': {
+        'api_base_url':        'https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/',
+        'ident_token_prefix':  'urn:oid:2.2.2.2.2.2'
+    },
+    'smart_open': {
+        'api_base_url':        'https://sb-fhir-dstu2.smarthealthit.org/api/smartdstu2/open/',
+        'ident_token_prefix':  ''
+    }
+}
+##################### End Epidur.io Settings ###############################
+
+
 try:
     from local_settings import *
 except ImportError:
