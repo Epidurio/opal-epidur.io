@@ -4,6 +4,49 @@
 # opal-epidur.io
 Port of epidur.io using the [Opal](https://github.com/openhealthcare/opal) healthcare application framework
 
+### Try out the Epidur.io web demo
+https://epidurio.herokuapp.com
+username: super
+password: super1
+
+### Get a local demmo of Epidur.io running with Docker
+Definitely the easiest way to get up and running with a locally-running version of Epidur.io is to use Docker and Docker-Compose to automatically install all dependencies and create discrete containers for the web application and database.
+
+#### Prerequisites:
+* Docker
+* Docker-Compose
+* Some familiarity with the command-line/shell on your platform of choice
+
+Installation instructions for Docker and Docker Compose vary according to the platform you are using, so please search the web for instructions appropriate to your OS platform.
+
+#### howto
+Clone this repo to a directory on your local machine
+```bash
+$ git clone git@github.com:Epidurio/opal-epidur.io.git
+```
+cd into the new directory
+```bash
+$ cd opal-epidur.io.git
+```
+start docker-compose:
+```bash
+$ docker-compose up
+```
+docker-compose will orchestrate the creation of two Docker containers:
+`db` - which will contain postgresql in a minimal linux operating system
+`web` - which contains python and our Python web application in a minimal operating system
+It also:
+* connects the two containers so that Python can connect to the database
+* Sets up port forwarding from the `web` container to the 'outside world' (your local machine which is the 'host' of the Docker containers). In this case, it's forwarding Django's default port of 8000 to your localhost:8001 (just in case you want to run a local Django as well, then they won't cause a port conflict). This can be modified in the file `docker-compose.yml` if you want a different port.
+* Arranges the file system so that changes you make in your `opal-epidurio/` directory are synced with the webapp inside the `web` container.
+
+There are just one or two other things needed at this point, one of which is to migrate the database so that it has all the tables and fields we need for our application.
+```bash
+$ sudo docker-compose run web python manage.py migrate
+```
+
+(WIP)
+
 ### Developing Epidur.io
 (with notes for the errant Rubyist and indication of what is Python, what is Django, and what is Opal)
 
