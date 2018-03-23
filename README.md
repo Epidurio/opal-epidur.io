@@ -13,6 +13,7 @@ password: super1
 Definitely the easiest way to get up and running with a locally-running version of Epidur.io is to use Docker and Docker-Compose to automatically install all dependencies and create discrete containers for the web application and database.
 
 #### Prerequisites:
+* git
 * Docker
 * Docker-Compose
 * Some familiarity with the command-line/shell on your platform of choice
