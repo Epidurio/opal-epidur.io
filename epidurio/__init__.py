@@ -23,46 +23,40 @@ class Application(application.OpalApplication):
 
     @classmethod
     def get_menu_items(klass, user=None):
-        items = []
-
-        menuitem = menus.MenuItem(
-            href='/#/list/labour/',
-            display="Labour Ward",
-            icon="fa-plus-circle",
-            activepattern='labour',
-            index=1
-        )
-
-        items.append(menuitem)
-
-        menuitem = menus.MenuItem(
-        href="pathway/#/add_patient/",
-        icon="fa fa-female",
-        display="Add Patient",
-        activepattern="add_patient",
-        index=2
-        )
-
-        items.append(menuitem)
-
-        menuitem = menus.MenuItem(
-            href='/#/list/epidural_requested/',
-            display="Epidurals Requested",
-            icon="fa-plus-circle",
-            activepattern='epidural_requested',
-            index=3
-        )
-
-        items.append(menuitem)
-
-        menuitem = menus.MenuItem(
-            href='/#/list/epidural_completed/',
-            display="Follow Ups",
-            icon="fa fa-mail-forward",
-            activepattern='epidural_completed',
-            index=4
-        )
-
-        items.append(menuitem)
-
+        items = [
+            menus.MenuItem(
+                href='/#/list/labour/',
+                display="Labour Ward",
+                icon="fa-plus-circle",
+                activepattern='labour',
+                index=1
+            ),
+            menus.MenuItem(
+                href="pathway/#/add_patient/",
+                icon="fa fa-female",
+                display="Add Patient",
+                activepattern="add_patient",
+                index=2
+            ),
+            menus.MenuItem(
+                href='/#/list/epidural_requested/',
+                display="Epidurals Requested",
+                icon="fa-plus-circle",
+                activepattern='epidural_requested',
+                index=3
+            ),
+            menus.MenuItem(
+                href='/#/list/epidural_completed/',
+                display="Follow Ups",
+                icon="fa fa-mail-forward",
+                activepattern='epidural_completed',
+                index=4
+            ),
+            menus.MenuItem(
+                href='/accounts/logout/',
+                display="Log Out",
+                icon="fa fa-sign-out",
+                index=5
+            ),
+        ]
         return items
