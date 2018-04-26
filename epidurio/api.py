@@ -1,4 +1,5 @@
 import requests
+from django.conf import settings
 from django.utils.dateparse import parse_date
 from opal.core.api import OPALRouter
 from opal.core.api import LoginRequiredViewset
@@ -8,17 +9,6 @@ from opal.core import exceptions
 
 class FhirServerSearchViewSet(LoginRequiredViewset):
     base_name = r'search'
-
-    API_DETAILS = {
-        'cerner_open': {
-            'api_base_url':        'https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/',
-            'ident_token_prefix':  'urn:oid:2.2.2.2.2.2'
-        },
-        'smart_open': {
-            'api_base_url':        'https://sb-fhir-dstu2.smarthealthit.org/api/smartdstu2/open/',
-            'ident_token_prefix':  ''
-        }
-    }
 
     PATIENT_FOUND_IN_FHIR = "patient_found_in_fhir"
     PATIENT_NOT_FOUND = "patient_not_found"
@@ -60,8 +50,9 @@ class FhirServerSearchViewSet(LoginRequiredViewset):
 
     def get_data_from_fhir_server(self, cerner_mrn):
         query_type = "Patient"
-        url = self.API_DETAILS['cerner_open']['api_base_url'] + query_type
-        identifier_string = self.API_DETAILS['cerner_open']['ident_token_prefix'] + "|" + cerner_mrn
+        url = settings.FHIR_API_DETAILS['cerner_open']['api_base_url'] + query_type
+        token_prefix = settings.FHIR_API_DETAILS['cerner_open']['ident_token_prefix']
+        identifier_string = token_prefix + "|" + cerner_mrn
         querystring = {"identifier": identifier_string}
         headers = {'accept': "application/json",}
         response = requests.request("GET", url, headers=headers, params=querystring)

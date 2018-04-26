@@ -101,8 +101,10 @@ $ sudo docker-compose run web python manage.py migrate
 
 
 ### FHIR integration
+
 * Epidur.io simply uses the Python `Requests` library to interface with the FHIR server.
 * We did experiment with the FHIRClient [fhirclient](https://github.com/smart-on-fhir/client-py) library, which is designed to provide a Pythonic, object oriented API for the FHIR server, however for our purposes it was simply much more than we needed.
+* The FHIR server details can be adjusted by overriding the setting `FHIR_API_DETAILS`
 
 
 ### Deploying your new Opal application to Heroku for testing/demo
