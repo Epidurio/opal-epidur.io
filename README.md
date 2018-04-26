@@ -1,5 +1,7 @@
-![Supported By The Apperta Foundation](https://github.com/AppertaFoundation/apperta-image-assets/blob/master/supported_by_apperta_lores.png)
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/Epidurio/epidur.io.svg?columns=all)](https://waffle.io/Epidurio/epidur.io)
+
+[![supported_by_apperta.png](https://github.com/AppertaFoundation/apperta-image-assets/blob/master/supported_by_apperta.png)](https://apperta.org/)
+
+------
 
 # opal-epidur.io
 Port of epidur.io using the [Opal](https://github.com/openhealthcare/opal) healthcare application framework
